@@ -186,6 +186,58 @@ hr {
 
 <p>Due: November 13, 2013</p>
 
+<h2>Fast Linear Regression</h2>
+
+<p>Write a function called <code>fastlm()</code> that fits a linear regression model
+to outcome data <code>y</code> and predictor data in a matrix <code>X</code>.</p>
+
+<p>Your function should have the form</p>
+
+<pre><code class="r">fastlm &lt;- function(X, y, na.rm = FALSE) {
+       ## Your code goes here
+}
+</code></pre>
+
+<p>The inputs should be <code>X</code>, a \(n\times p\) matrix, <code>y</code>, a vector of
+length \(n\), and <code>na.rm</code>, which indicates whether missing values in <code>X</code>
+or <code>y</code> should be removed.</p>
+
+<p>The function should return a list with the following named elements</p>
+
+<ul>
+<li><p><code>coefficients</code>: a vector of the regression coefficients estimated
+using maximum likelihood, i.e. \(\hat{\beta}=(X^\prime X)^{-1}X^\prime y\).</p></li>
+<li><p><code>vcov</code>: the \(p\times p\) covariance of matrix of the estimated
+regression coefficients, i.e. \(Var(\hat{\beta})\).</p></li>
+</ul>
+
+<p>Your function should be <strong>fast</strong>. In particular, it should always run
+faster than the <code>lm.fit()</code> function in R using the same inputs.</p>
+
+<p>To test your function, try running the following code.</p>
+
+<pre><code class="r">set.seed(2)
+## Generate predictor matrix
+n &lt;- 100000
+p &lt;- 500
+X &lt;- cbind(1, matrix(rnorm(n * (p - 1)), n, p - 1))
+
+## Coefficents
+b &lt;- rnorm(p)
+
+## Response
+y &lt;- X %*% b + rnorm(n)
+
+source(&quot;fastlm.R&quot;)
+fit &lt;- fastlm(X, y)
+str(fit)
+</code></pre>
+
+<pre><code>## List of 2
+##  $ coefficients: num [1:500] 0.126 1.072 -0.243 0.654 -0.975 ...
+##  $ vcov        : num [1:500, 1:500] 0.0000100497 -0.0000000325 -0.000000015 0.0000000567 -0.0000000407 ...
+</code></pre>
+
 <h2>Fast Multivariate Normal Density</h2>
 
 <p>Write a function called <code>dmvnorm()</code> that evaluates the \(k\)-dimensional
@@ -205,8 +257,13 @@ density function is
 a length \(k\) vector of means for the \(k\)-dimensional Normal, and \(S\)
 is a \(k\times k\) covariance matrix. Your function should be written
 using R code only and you MAY NOT use any additional packages beyond
-the standard base packages that come with R (i.e. you cannot call the
-<code>library()</code> or <code>require()</code> functions in your code).</p>
+the standard base packages that come with R.</p>
+
+<p>Your function should return a vector of length \(n\) containing the
+values of the multivariate Normal density evaluated at the \(n\)
+points. If <code>log = TRUE</code> then you should return the log density at
+those points. If <code>log = FALSE</code>, then you should return the density
+values.</p>
 
 <p>You can assume that \(S\) will be symmetric. However, your function
 should check to see if \(S\) is positive definite. If it is not, then
@@ -242,13 +299,12 @@ mu &lt;- rep(0, n2)
 set.seed(1)
 x &lt;- matrix(rnorm(n2), byrow = TRUE, ncol = n2)
 
+source(&quot;dmvnorm.R&quot;)
 dmvnorm(x, mu, S, log = TRUE)
 </code></pre>
 
-<p>The answer should be <code>-124634.8</code>. On my laptop, it takes approximately
-22 seconds to compute the answer.</p>
-
-<h2>Fast Linear Regression</h2>
+<pre><code>## [1] -124635
+</code></pre>
 
 </body>
 

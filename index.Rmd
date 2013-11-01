@@ -5,6 +5,57 @@ Homework 1 for Biostat 778
 
 Due: November 13, 2013
 
+## Fast Linear Regression
+
+Write a function called `fastlm()` that fits a linear regression model
+to outcome data `y` and predictor data in a matrix `X`.
+
+Your function should have the form
+
+```r
+fastlm <- function(X, y, na.rm = FALSE) {
+       ## Your code goes here
+}
+```
+
+The inputs should be `X`, a $n\times p$ matrix, `y`, a vector of
+length $n$, and `na.rm`, which indicates whether missing values in `X`
+or `y` should be removed.
+
+The function should return a list with the following named elements
+
+- `coefficients`: a vector of the regression coefficients estimated
+  using maximum likelihood, i.e. $\hat{\beta}=(X^\prime X)^{-1}X^\prime y$.
+
+- `vcov`: the $p\times p$ covariance of matrix of the estimated
+  regression coefficients, i.e. $Var(\hat{\beta})$.
+
+Your function should be **fast**. In particular, it should always run
+faster than the `lm.fit()` function in R using the same inputs.
+
+To test your function, try running the following code.
+
+```{r,cache=TRUE}
+set.seed(2)
+## Generate predictor matrix
+n <- 1e5
+p <- 500
+X <- cbind(1, matrix(rnorm(n * (p - 1)), n, p - 1))
+
+## Coefficents
+b <- rnorm(p)
+
+## Response
+y <- X %*% b + rnorm(n)
+
+source("fastlm.R")
+fit <- fastlm(X, y)
+str(fit)
+```
+
+
+
+
 ## Fast Multivariate Normal Density
 
 Write a function called `dmvnorm()` that evaluates the $k$-dimensional
@@ -25,8 +76,13 @@ where $x$ is a $n\times k$ matrix of points to be evaluated, $\mu$ is
 a length $k$ vector of means for the $k$-dimensional Normal, and $S$
 is a $k\times k$ covariance matrix. Your function should be written
 using R code only and you MAY NOT use any additional packages beyond
-the standard base packages that come with R (i.e. you cannot call the
-`library()` or `require()` functions in your code).
+the standard base packages that come with R.
+
+Your function should return a vector of length $n$ containing the
+values of the multivariate Normal density evaluated at the $n$
+points. If `log = TRUE` then you should return the log density at
+those points. If `log = FALSE`, then you should return the density
+values.
 
 You can assume that $S$ will be symmetric. However, your function
 should check to see if $S$ is positive definite. If it is not, then
@@ -49,7 +105,7 @@ you are interested in the `user` time.
 
 To test your code, try running the following.
 
-```r
+```{r,cache=TRUE}
 ## Create the covariance matrix
 n <- 100
 n2 <- n^2
@@ -64,10 +120,7 @@ mu <- rep(0, n2)
 set.seed(1)
 x <- matrix(rnorm(n2), byrow = TRUE, ncol = n2)
 
+source("dmvnorm.R")
 dmvnorm(x, mu, S, log = TRUE)
 ```
 
-The answer should be `-124634.8`. On my laptop, it takes approximately
-22 seconds to compute the answer.
-
-## Fast Linear Regression
