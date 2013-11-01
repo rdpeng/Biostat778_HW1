@@ -188,11 +188,13 @@ hr {
 
 <h2>Fast Multivariate Normal Density</h2>
 
-<p>Write a function called dmvnorm that evaluates the multivariate Normal
-density with mean \(\mu\) and covariance \(S\). The density function is</p>
+<p>Write a function called <code>dmvnorm()</code> that evaluates the \(k\)-dimensional
+multivariate Normal density with mean \(\mu\) and covariance \(S\). The
+density function is
+\(f(x\mid\mu,S)=\exp\left(-\frac{k}{2}\log(2\pi)-\frac{1}{2}\log
+|S|-\frac{1}{2}(x-\mu)^\prime S^{-1}(x-\mu)\right)\). </p>
 
-<p>Assume the the covariance matrix \(S\) is always symmetric and
-full-rank. The function should have the form</p>
+<p>Your function should have the form</p>
 
 <pre><code class="r">dmvnorm &lt;- function(x, mu, S, log = TRUE) {
         ## Your code here
@@ -200,10 +202,51 @@ full-rank. The function should have the form</p>
 </code></pre>
 
 <p>where \(x\) is a \(n\times k\) matrix of points to be evaluated, \(\mu\) is
-a \(k \times 1\) vector of means for the \(k\)-dimensional Normal, and \(S\)
+a length \(k\) vector of means for the \(k\)-dimensional Normal, and \(S\)
 is a \(k\times k\) covariance matrix. Your function should be written
 using R code only and you MAY NOT use any additional packages beyond
-the standard base packages that come with R.</p>
+the standard base packages that come with R (i.e. you cannot call the
+<code>library()</code> or <code>require()</code> functions in your code).</p>
+
+<p>You can assume that \(S\) will be symmetric. However, your function
+should check to see if \(S\) is positive definite. If it is not, then
+your function should return the error message <code>&quot;S is not positive
+definite&quot;</code>.</p>
+
+<p>Your code should be <strong>fast</strong>. In particular, it should work quickly
+for large inputs (i.e. when the dimension of \(k\) is large). You can
+simulate Normal data if you want by using the <code>mvrnorm()</code> function
+from the <strong>MASS</strong> package.</p>
+
+<p>You can time your function with the <code>system.time()</code> function. Calling</p>
+
+<pre><code class="r">system.time(dmvnorm(x, mu, S))
+</code></pre>
+
+<p>will give you the time spent executing your function. In particular,
+you are interested in the <code>user</code> time.</p>
+
+<p>To test your code, try running the following.</p>
+
+<pre><code class="r">## Create the covariance matrix
+n &lt;- 100
+n2 &lt;- n^2
+xg &lt;- seq(0, 1, length = n)
+yg &lt;- xg
+g &lt;- data.matrix(expand.grid(xg, yg))
+D &lt;- as.matrix(dist(g))
+phi &lt;- 5
+
+S &lt;- exp(-phi * D)
+mu &lt;- rep(0, n2)
+set.seed(1)
+x &lt;- matrix(rnorm(n2), byrow = TRUE, ncol = n2)
+
+dmvnorm(x, mu, S, log = TRUE)
+</code></pre>
+
+<p>The answer should be <code>-124634.8</code>. On my laptop, it takes approximately
+22 seconds to compute the answer.</p>
 
 <h2>Fast Linear Regression</h2>
 
