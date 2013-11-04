@@ -1,9 +1,34 @@
-Biostat778_HW1
+Homework 1 for Biostat 778
 ==============
 
-Homework 1 for Biostat 778
 
-Due: November 13, 2013
+## Due: November 13, 2013
+
+## Setup
+
+In order to do this homework you must
+
+1.  **Fork** the
+[Biostat778_HW1](https://github.com/rdpeng/Biostat778_HW1) repository
+on GitHub
+
+2.  Once you have cloned the repository on GitHub, you can **clone**
+it to your local computer to actually do the work.
+
+3.  As you are working, make sure to commit changes at logical points
+via `git add` and `git commit`.
+
+4.  Once you have completed the assignment, you can push your changes
+back to your GitHub repository via `git push`.
+
+5.  Once you have pushed your changes, make a **pull request** on
+GitHub so that I can see that you're ready to submit your homework.
+
+6.  If you want me to time your functions on the test code, you can
+send me a pull request and I will run it on my computer. Timings that
+are run on my computer will go on the leaderboard maintained in the
+Git repository for the homework.
+
 
 ## Fast Linear Regression
 
