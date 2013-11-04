@@ -29,6 +29,18 @@ send me a pull request and I will run it on my computer. Timings that
 are run on my computer will go on the leaderboard maintained in the
 Git repository for the homework.
 
+7.  Your finished code should be submitted in the form of an **R
+package**.
+
+8.  Your R package should pass `R CMD check` without any warnings,
+errors, or notes.
+
+9.  I will put unit tests in the `tests` directory of the R package
+for the `master` branch. Please DO NOT make any changes in the `tests`
+directory.
+
+10.  You can use the tests in the `tests` directory to check your code as the expected results will also be in the tests directory.
+
 
 ## Fast Linear Regression
 
