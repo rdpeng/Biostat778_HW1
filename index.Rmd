@@ -30,7 +30,7 @@ are run on my computer will go on the leaderboard maintained in the
 Git repository for the homework.
 
 7.  Your finished code should be submitted in the form of an **R
-package**.
+package**. The R package should be named **Homework1**.
 
 8.  Your R package should pass `R CMD check` without any warnings,
 errors, or notes.
