@@ -11,6 +11,7 @@
 #' fastlm(X, y)
 fastlm <- function(X, y, na.rm=FALSE) 
 {   
+    y <- as.vector(y)
     if (na.rm)
     {
         to_keep <- complete.cases(X) & complete.cases(y)
