@@ -18,7 +18,7 @@
   density should be returned}
 }
 \value{
-  numeric vector with length \code{n}, one entry for the
+  numeric vector with length \code{n}, corresponding to the
   density of the \code{n} vectors in \code{x} evaluated
   under a multivariate normal distribution defined by mean
   \code{mu} and variance-covariance \code{S}

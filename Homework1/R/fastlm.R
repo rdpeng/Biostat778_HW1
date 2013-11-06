@@ -1,9 +1,9 @@
 #' Fast linear regression
 #'
-#' @param X a \code{n x p} design matrix
+#' @param X an \code{n x p} design matrix
 #' @param y a numeric vector of length \code{n}
 #' @param na.rm a boolean to indicate if \code{NA} values should be removed
-#' @return \code{fastlm} returns a list with the following components: \item{coefficients}{A numeric vector of length \code{p} containing the regression coefficients estimated by maximum likelihood.} \item{vcov}{the \code{p x p} covariance matrix of the estimated regression coefficients.}
+#' @return \code{fastlm()} returns a list with the following components: \item{coefficients}{A numeric vector of length \code{p} containing the regression coefficients estimated by maximum likelihood.} \item{vcov}{the \code{p x p} covariance matrix of the estimated regression coefficients.}
 #' @export
 #' @examples
 #' X <- matrix(rnorm(10),ncol=2)

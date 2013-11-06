@@ -4,7 +4,7 @@
 #' @param mu the mean of the distribution: a numeric vector of length \code{k}
 #' @param S the variance-covariance matrix with dimensions \code{k x k}
 #' @param log a boolean that indicates if the log of the density should be returned
-#' @return numeric vector with length \code{n}, one entry for the density of the \code{n} vectors in \code{x} evaluated under a multivariate normal distribution defined by mean \code{mu} and variance-covariance \code{S}
+#' @return numeric vector with length \code{n}, corresponding to the density of the \code{n} vectors in \code{x} evaluated under a multivariate normal distribution defined by mean \code{mu} and variance-covariance \code{S}
 #' @export
 #' @examples
 #' x <- matrix(rnorm(10*9), ncol=9)
