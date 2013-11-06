@@ -3,7 +3,8 @@ Title: Advanced Computing Homework 1
 Description: Improves R's base linear regression function and adds support for
     multivariate normal density evaluation.
 Version: 1.0-0
-Authors@R: "James Pringle <james_pringle@jhu.edu>"
+Authors@R: person("James Pringle", role=c("aut","cre"),
+    email="james_pringle@jhu.edu")
 Depends:
     R (>= 3.0.1)
 License: GPL-3
