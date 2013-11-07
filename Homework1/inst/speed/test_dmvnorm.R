@@ -1,4 +1,4 @@
-source("dmvnorm.R")
+library(Homework1)
 
 ## Create the covariance matrix
 n <- 100
