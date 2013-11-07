@@ -1,5 +1,10 @@
 fastlm <-
 function(X,y,na.rm=FALSE){ # using cholesky decomposition.
+  if (na.rm){
+    data = na.exclude(cbind(y,X))
+    X = data[,-1]
+    y = data[,1]
+  }
   size = dim(X)
   n = size[1]
   p = size[2]

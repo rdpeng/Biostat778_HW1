@@ -4,8 +4,8 @@ This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011)
  restricted \write18 enabled.
 entering extended mode
 
-(/private/var/folders/25/m91bjqp918l9g8qrtlk_mrrw0000gn/T/RtmpTBU2ns/Rd2pdf4f31
-5375d6f/Rd2.tex
+(/private/var/folders/25/m91bjqp918l9g8qrtlk_mrrw0000gn/T/RtmpF9lrmg/Rd2pdf6722
+0714232/Rd2.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
 rman-x-2009-06-19, ngerman-x-2009-06-19, afrikaans, ancientgreek, ibycus, arabi
@@ -112,8 +112,8 @@ This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011)
  restricted \write18 enabled.
 entering extended mode
 
-(/private/var/folders/25/m91bjqp918l9g8qrtlk_mrrw0000gn/T/RtmpTBU2ns/Rd2pdf4f31
-5375d6f/Rd2.tex
+(/private/var/folders/25/m91bjqp918l9g8qrtlk_mrrw0000gn/T/RtmpF9lrmg/Rd2pdf6722
+0714232/Rd2.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
 rman-x-2009-06-19, ngerman-x-2009-06-19, afrikaans, ancientgreek, ibycus, arabi
@@ -227,8 +227,8 @@ This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011)
  restricted \write18 enabled.
 entering extended mode
 
-(/private/var/folders/25/m91bjqp918l9g8qrtlk_mrrw0000gn/T/RtmpTBU2ns/Rd2pdf4f31
-5375d6f/Rd2.tex
+(/private/var/folders/25/m91bjqp918l9g8qrtlk_mrrw0000gn/T/RtmpF9lrmg/Rd2pdf6722
+0714232/Rd2.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
 rman-x-2009-06-19, ngerman-x-2009-06-19, afrikaans, ancientgreek, ibycus, arabi
@@ -329,4 +329,4 @@ Output written on Rd2.pdf (6 pages, 68066 bytes).
 Transcript written on Rd2.log.
 Saving output to 'Homework1-manual.pdf' ...
 Done
-You may want to clean up by 'rm -rf /var/folders/25/m91bjqp918l9g8qrtlk_mrrw0000gn/T//RtmpTBU2ns/Rd2pdf4f315375d6f'
+You may want to clean up by 'rm -rf /var/folders/25/m91bjqp918l9g8qrtlk_mrrw0000gn/T//RtmpF9lrmg/Rd2pdf67220714232'
