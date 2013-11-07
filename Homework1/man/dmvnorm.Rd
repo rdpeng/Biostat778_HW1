@@ -2,7 +2,7 @@
 \alias{dmvnorm}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+	Compute the multivariate Normal density
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
