@@ -17,7 +17,7 @@ system.time(fit <- fastlm(X, y))
 str(fit)
 
 ########################################################
-n <- 70
+n <- 50
 n2 <- n^2
 xg <- seq(0, 1, length = n)
 yg <- xg
@@ -31,7 +31,7 @@ set.seed(1)
 x <- matrix(rnorm(n2), byrow = TRUE, ncol = n2)
 
 source("fastdmvnorm.R")
-system.time(mymvpdf<-fastdmvnorm(x=x, mu=mu, S=S, log = TRUE))
+system.time(mymvpdf<-dmvnorm(x=x, mu=mu, S=S, log = TRUE))
 
 library(mvtnorm)
 system.time(stdmvpdf<-dmvnorm(x=x,mean=mu,sigma=S,log=TRUE))
