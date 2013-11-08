@@ -2,10 +2,12 @@
 
 library(Homework1)
 
-mu <- rep(0, 10)
-S <- diag(2, 10)
-x <- matrix(rbind(rep(0, 10), rep(1, 10)), 2, 10)
-y <- dmvnorm(x, mu, S, log = FALSE)
+mu <- rep(0, 100)
+S <- diag(1, 100)
+x <- rep(0, 100)
+y <- dmvnorm(x, mu, S, log = TRUE)
 print(y, digits = 15)
+
+x <- rep(1, 100)
 y <- dmvnorm(x, mu, S, log = TRUE)
 print(y, digits = 15)

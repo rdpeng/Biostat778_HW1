@@ -21,16 +21,18 @@ Type 'q()' to quit R.
 > 
 > library(Homework1)
 > 
-> mu <- rep(0, 10)
-> S <- diag(2, 10)
-> x <- matrix(rbind(rep(0, 10), rep(1, 10)), 2, 10)
-> y <- dmvnorm(x, mu, S, log = FALSE)
-> print(y, digits = 15)
-[1] 0.000003191175432669325 0.000000261947630999281
+> mu <- rep(0, 100)
+> S <- diag(1, 100)
+> x <- rep(0, 100)
 > y <- dmvnorm(x, mu, S, log = TRUE)
 > print(y, digits = 15)
-[1] -12.6551212348465 -15.1551212348465
+[1] -91.8938533204673
+> 
+> x <- rep(1, 100)
+> y <- dmvnorm(x, mu, S, log = TRUE)
+> print(y, digits = 15)
+[1] -141.893853320467
 > 
 > proc.time()
    user  system elapsed 
-  0.263   0.024   0.276 
+  0.282   0.027   0.295 
