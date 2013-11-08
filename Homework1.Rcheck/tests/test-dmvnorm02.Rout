@@ -1,0 +1,37 @@
+
+R version 3.0.2 (2013-09-25) -- "Frisbee Sailing"
+Copyright (C) 2013 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin10.8.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> ## Check `log = FALSE'
+> 
+> library(Homework1)
+> op <- options(scipen = 5)
+> 
+> mu <- rep(0, 10)
+> S <- diag(2, 10)
+> x <- matrix(rbind(rep(0, 10), rep(1, 10)), 2, 10)
+> y <- dmvnorm(x, mu, S, log = FALSE)
+> print(y, digits = 10)
+[1] 0.000003191175433 0.000000261947631
+> y <- dmvnorm(x, mu, S, log = TRUE)
+> print(y, digits = 10)
+[1] -12.65512123 -15.15512123
+> 
+> options(op)
+> 
+> proc.time()
+   user  system elapsed 
+  0.205   0.025   0.217 

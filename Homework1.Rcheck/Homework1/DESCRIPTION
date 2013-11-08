@@ -1,0 +1,10 @@
+Package: Homework1
+Type: Package
+Title: HW1 fastlm and dmvnorm
+Version: 1.02
+Date: 2013-11-08
+Author: Detian Deng
+Maintainer: Detian Deng <ddeng@jhsph.edu>
+Description: This package is for 140.778 HW1. It has two functions. The fastlm function fits a linear model given the design matrix X and outcome vector Y. The dmvnorm function evaluates the multivariate normal density given the matrix of quantiles, vector of mean, and covariance matrix. 
+License: GPL-2
+Built: R 3.0.2; ; 2013-11-08 22:34:36 UTC; unix

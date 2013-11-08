@@ -16,6 +16,13 @@ source("fastlm.R")
 system.time(fit <- fastlm(X, y))
 str(fit)
 
+XX=crossprod(X)
+system.time(chol(crossprod(X)))
+system.time(qr(X))
+
+system.time(crossprod(backsolve(chol(XX),diag(500))))
+system.time(chol2inv(chol(XX)))
+
 ########################################################
 n <- 50
 n2 <- n^2
