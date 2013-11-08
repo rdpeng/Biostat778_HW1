@@ -5,7 +5,7 @@
 	Fit a linear regression model
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+  Fit a linear regression model using fast computation
 }
 \usage{
 fastlm(X, y, na.rm = FALSE)
@@ -13,63 +13,27 @@ fastlm(X, y, na.rm = FALSE)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{X}{
-%%     ~~Describe \code{X} here~~
+    The n x p matrix of p predictors for n observations
 }
   \item{y}{
-%%     ~~Describe \code{y} here~~
+    The length n vector of responses
 }
   \item{na.rm}{
-%%     ~~Describe \code{na.rm} here~~
+    Should missing values from \code{X} or \code{y} be removed first?
+    Default is \code{FALSE}.
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+  This function computes the linear regression coefficients and the covariance
+  matrix of the estimated coefficients in a fast manner.
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
-}
-\references{
-%% ~put references to the literature/web site here ~
+A list containing the following items is returned:
+ \item{coefficients}{A length p vector of estimated regression coefficients}
+ \item{vcov}{A p x p matrix containing the covariance matrix of the estimated
+   regression coefficients}
 }
 \author{
-%%  ~~who you are~~
+  Roger D. Peng \email{rpeng@jhsph.edu}
 }
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
-\examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function (X, y, na.rm = FALSE) 
-{
-    if (na.rm) {
-        u <- complete.cases(X, y)
-        X <- X[u, ]
-        y <- y[u]
-    }
-    XtX <- crossprod(X)
-    ch <- try(chol(XtX))
-    V <- chol2inv(ch)
-    b <- drop(V \%*\% crossprod(X, y))
-    res <- drop(y - X \%*\% b)
-    sigma2 <- sum(res * res)/(length(y) - ncol(X))
-    list(coefficients = b, vcov = sigma2 * V)
-  }
-}
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{models}
