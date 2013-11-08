@@ -8,14 +8,14 @@
   Compute a fast version of the multivariate Normal density function
 }
 \usage{
-dmvnorm(x, m, S, log = TRUE)
+dmvnorm(x, mu, S, log = TRUE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
     The n x k matrix of n points at which to evaluate the density 
 }
-  \item{m}{
+  \item{mu}{
     The length k vector of means
 }
   \item{S}{
