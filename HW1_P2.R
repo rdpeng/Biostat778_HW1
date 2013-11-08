@@ -11,14 +11,18 @@ dmvnorm <- function(x, mu, S, log = TRUE) {
         
         #Computing t(x-mu)*Q_inverse
         temp1=x-rep(1,n)%*%t(mu)
-        C=forwardsolve(t(Q),t(temp1))
-        temp2=diag(crossprod(C))
-        logdensity=(-k/2)*log(2*pi)-(1/2)*2*sum(log(diag(Q)))-(1/2)*temp2
+        A=forwardsolve(t(Q),t(temp1))
+        temp2=diag(crossprod(A))
+        
+        #Computing density
+        density=(-k/2)*log(2*pi)-(1/2)*2*sum(log(diag(Q)))-(1/2)*temp2
+        
+        #Check if log is false
         if(log==FALSE){
-                logdensity=exp(logdensity)
+                density=exp(density)
         }
         
-        return(logdensity)
+        return(density)
 }
 
 ## Create the covariance matrix
