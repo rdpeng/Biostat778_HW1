@@ -5,7 +5,7 @@ fastlm <- function(X, y, na.rm = FALSE) {
                 y <- y[u]
         }
         XtX <- crossprod(X)
-        ch <- try(chol(XtX))
+        ch <- chol(XtX)
         V <- chol2inv(ch)
         b <- drop(V %*% crossprod(X, y))
         res <- drop(y - X %*% b)
