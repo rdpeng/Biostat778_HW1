@@ -18,6 +18,7 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 Type 'q()' to quit R.
 
 > library(Homework1)
+Homework1: Code for Homework 1 (version 1.1)
 > op <- options(scipen = 5)
 > 
 > set.seed(2)
@@ -54,4 +55,4 @@ Type 'q()' to quit R.
 > 
 > proc.time()
    user  system elapsed 
-  2.087   0.094   1.521 
+  2.111   0.091   1.536 

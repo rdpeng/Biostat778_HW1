@@ -20,6 +20,7 @@ Type 'q()' to quit R.
 > ## Remove missing values
 > 
 > library(Homework1)
+Homework1: Code for Homework 1 (version 1.1)
 > library(datasets)
 > data(airquality)
 > op <- options(scipen = 5)
@@ -51,4 +52,4 @@ Type 'q()' to quit R.
 > 
 > proc.time()
    user  system elapsed 
-  0.287   0.026   0.302 
+  0.285   0.024   0.299 
