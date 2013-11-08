@@ -1,0 +1,52 @@
+
+R version 3.0.2 Patched (2013-10-08 r64038) -- "Frisbee Sailing"
+Copyright (C) 2013 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin12.5.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> library(Homework1)
+> op <- options(scipen = 5)
+> 
+> set.seed(2)
+> ## Generate predictor matrix
+> n <- 1000 * 2
+> p <- 990 * 2
+> X <- cbind(1, matrix(rnorm(n * (p - 1)), n, p - 1))
+> 
+> ## Coefficents
+> b <- rnorm(p)
+> 
+> ## Response
+> y <- drop(X %*% b + rnorm(n))
+> 
+> fit <- fastlm(X, y)
+> b.est <- drop(fit$coefficients)
+> yhat <- drop(X %*% b.est)
+> summary(yhat)
+    Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
+-156.500  -31.130   -2.281   -1.551   27.930  152.900 
+> res <- y - yhat
+> summary(res)
+     Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
+-0.452800 -0.081390  0.001618  0.000000  0.084000  0.400100 
+> 
+> 
+> 
+> options(op)
+> 
+> proc.time()
+   user  system elapsed 
+  2.078   0.094   1.526 
