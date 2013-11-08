@@ -22,7 +22,7 @@ dmvnorm <- function(x, m, S, log = TRUE) {
 ## The slow way
 dmvnorm0 <- function(x, mu, S, log = TRUE) {
         k <- NCOL(x)
-        logdet <- determinant(S, log = TRUE)$modulus
+        logdet <- determinant(S, logarithm = TRUE)$modulus
         distval <- mahalanobis(x, mu, S)
         ret <- -(k * log(2 * pi) + logdet + distval) / 2
         if(log)
