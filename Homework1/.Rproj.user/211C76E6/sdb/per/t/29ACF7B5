@@ -1,0 +1,16 @@
+{
+    "contents" : "fastlm<-function(X, y, na.rm=FALSE)\n{\n      ## calculate estimated beta\n      b<-crossprod(X,y)\n      XX<-crossprod(X)\n      cx<-chol(XX)\n      temp<-forwardsolve(t(cx),b)\n      beta<-backsolve(cx,temp)\n      \n      ## calculate covariance matrix of estimated beta\n      n<-length(y)\n      p<-ncol(X)\n      e<-(y-tcrossprod(X,t(beta)))\n      e_var<-sum(e^2)/(n-p)\n      vcov<-e_var*chol2inv(cx)\n      \n      ## return result list\n      result<-list(coefficients=beta,vcov=vcov)\n}\n\n",
+    "created" : 1383870871429.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1444268047",
+    "id" : "29ACF7B5",
+    "lastKnownWriteTime" : 1383874729,
+    "path" : "~/Documents/778/Biostat778_HW1/Homework1/R/fastlm.R",
+    "project_path" : "R/fastlm.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
