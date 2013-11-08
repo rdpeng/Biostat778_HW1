@@ -5,7 +5,7 @@ library(datasets)
 data(airquality)
 op <- options(scipen = 5)
 
-X <- data.matrix(airquality[, -1])
+X <- cbind(1, data.matrix(airquality[, -1]))
 y <- airquality$Ozone
 
 fit <- fastlm(X, y, na.rm = TRUE)
