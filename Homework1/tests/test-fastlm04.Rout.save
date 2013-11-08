@@ -1,5 +1,5 @@
 
-R version 3.0.2 Patched (2013-10-08 r64038) -- "Frisbee Sailing"
+R version 3.0.2 Patched (2013-11-08 r64176) -- "Frisbee Sailing"
 Copyright (C) 2013 The R Foundation for Statistical Computing
 Platform: x86_64-apple-darwin12.5.0 (64-bit)
 
@@ -54,4 +54,4 @@ Type 'q()' to quit R.
 > 
 > proc.time()
    user  system elapsed 
-  2.257   0.106   1.650 
+  2.053   0.095   1.517 
