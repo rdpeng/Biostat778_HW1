@@ -1,0 +1,45 @@
+
+R version 3.0.2 (2013-09-25) -- "Frisbee Sailing"
+Copyright (C) 2013 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin10.8.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> pkgname <- "Homework1"
+> source(file.path(R.home("share"), "R", "examples-header.R"))
+> options(warn = 1)
+> library('Homework1')
+> 
+> base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> cleanEx()
+> nameEx("dmvnorm")
+> ### * dmvnorm
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: dmvnorm
+> ### Title: Fast Multivariate Normal (log)density Calculation
+> ### Aliases: dmvnorm
+> ### Keywords: multivariate normal,density,fast
+> 
+> ### ** Examples
+> 
+> ## Create the covariance matrix
+> n <- 100
+> n2 <- n^2
+> xg <- seq(0, 1, length = n)
+> yg <- xg
+> g <- data.matrix(expand.grid(xg, yg))
+> D <- as.matrix(dist(g))
