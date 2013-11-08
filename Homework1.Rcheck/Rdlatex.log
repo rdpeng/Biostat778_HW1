@@ -4,8 +4,8 @@ This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013)
  restricted \write18 enabled.
 entering extended mode
 
-(/private/var/folders/3w/vqgzyw5d43s1vb1hm2hz3bzr0000gn/T/RtmpzFvUcy/Rd2pdf9aa1
-9c21f41/Rd2.tex
+(/private/var/folders/3w/vqgzyw5d43s1vb1hm2hz3bzr0000gn/T/RtmpkA8FgV/Rd2pdf14d6
+3a8520bd/Rd2.tex
 LaTeX2e <2011/06/27>
 Babel <3.9f> and hyphenation patterns for 78 languages loaded.
 
@@ -70,28 +70,26 @@ No file Rd2.aux.
 (/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
 (/usr/local/texlive/2013/texmf-dist/tex/latex/inconsolata/t1fi4.fd)
 (/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/t1phv.fd)
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def)
-Underfull \vbox (badness 3861) has occurred while \output is active [1{/usr/loc
-al/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def) [1{/usr/local/texl
+ive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def) [2]
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def) [3] [4]
 No file Rd2.ind.
-[3] (./Rd2.aux)
+[5] (./Rd2.aux)
 
 Package rerunfilecheck Warning: File `Rd2.out' has changed.
 (rerunfilecheck)                Rerun to get outlines right
 (rerunfilecheck)                or use package `bookmark'.
 
- )
-(see the transcript file for additional information){/usr/local/texlive/2013/te
-xmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/texlive/2013/texmf-dist/fonts/
-enc/dvips/inconsolata/fi4-ec.enc}</usr/local/texlive/2013/texmf-dist/fonts/type
-1/public/inconsolata/Inconsolata.pfb></usr/local/texlive/2013/texmf-dist/fonts/
-type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/u
-rw/times/utmb8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/u
-tmr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-</usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (3 pages, 60743 bytes).
+ ){/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/t
+exlive/2013/texmf-dist/fonts/enc/dvips/inconsolata/fi4-ec.enc}</usr/local/texli
+ve/2013/texmf-dist/fonts/type1/public/inconsolata/Inconsolata.pfb></usr/local/t
+exlive/2013/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/
+2013/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2013/texmf
+-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2013/texmf-dist/font
+s/type1/urw/times/utmr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/ur
+w/times/utmri8a.pfb>
+Output written on Rd2.pdf (5 pages, 65937 bytes).
 Transcript written on Rd2.log.
 This is makeindex, version 2.15 [TeX Live 2013] (kpathsea + Thai support).
 Scanning input file ./Rd2.idx....done (7 entries accepted, 0 rejected).
@@ -103,8 +101,8 @@ This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013)
  restricted \write18 enabled.
 entering extended mode
 
-(/private/var/folders/3w/vqgzyw5d43s1vb1hm2hz3bzr0000gn/T/RtmpzFvUcy/Rd2pdf9aa1
-9c21f41/Rd2.tex
+(/private/var/folders/3w/vqgzyw5d43s1vb1hm2hz3bzr0000gn/T/RtmpkA8FgV/Rd2pdf14d6
+3a8520bd/Rd2.tex
 LaTeX2e <2011/06/27>
 Babel <3.9f> and hyphenation patterns for 78 languages loaded.
 
@@ -172,14 +170,14 @@ Writing index file Rd2.idx
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def)
 Underfull \vbox (badness 10000) has occurred while \output is active [1{/usr/lo
 cal/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def)
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def) [2] (./Rd2.ind
-[3]
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def) [2]
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def) [3] [4] (./Rd2.ind
+ [5]
 
 LaTeX Font Warning: Font shape `T1/fi4/m/it' undefined
 (Font)              using `T1/fi4/m/n' instead on input line 12.
 
-[4]) (./Rd2.aux)
+[6]) (./Rd2.aux)
 
 Package rerunfilecheck Warning: File `Rd2.out' has changed.
 (rerunfilecheck)                Rerun to get outlines right
@@ -198,7 +196,7 @@ ype1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/ur
 w/times/utmb8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/ut
 mr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><
 /usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (4 pages, 69792 bytes).
+Output written on Rd2.pdf (6 pages, 75022 bytes).
 Transcript written on Rd2.log.
 This is makeindex, version 2.15 [TeX Live 2013] (kpathsea + Thai support).
 Scanning input file ./Rd2.idx....done (7 entries accepted, 0 rejected).
@@ -210,8 +208,8 @@ This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013)
  restricted \write18 enabled.
 entering extended mode
 
-(/private/var/folders/3w/vqgzyw5d43s1vb1hm2hz3bzr0000gn/T/RtmpzFvUcy/Rd2pdf9aa1
-9c21f41/Rd2.tex
+(/private/var/folders/3w/vqgzyw5d43s1vb1hm2hz3bzr0000gn/T/RtmpkA8FgV/Rd2pdf14d6
+3a8520bd/Rd2.tex
 LaTeX2e <2011/06/27>
 Babel <3.9f> and hyphenation patterns for 78 languages loaded.
 
@@ -277,16 +275,16 @@ Writing index file Rd2.idx
 (/usr/local/texlive/2013/texmf-dist/tex/latex/inconsolata/t1fi4.fd)
 (/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/t1phv.fd) (./Rd2.toc)
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def)
-Overfull \vbox (4.07198pt too high) has occurred while \output is active
+Overfull \vbox (16.07198pt too high) has occurred while \output is active
 [1{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def)
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def) [2] (./Rd2.ind
-[3]
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def) [2]
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def) [3] [4] (./Rd2.ind
+ [5]
 
 LaTeX Font Warning: Font shape `T1/fi4/m/it' undefined
 (Font)              using `T1/fi4/m/n' instead on input line 12.
 
-[4]) (./Rd2.aux)
+[6]) (./Rd2.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -300,8 +298,8 @@ ype1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/ur
 w/times/utmb8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/ut
 mr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><
 /usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (4 pages, 70598 bytes).
+Output written on Rd2.pdf (6 pages, 75281 bytes).
 Transcript written on Rd2.log.
 Saving output to 'Homework1-manual.pdf' ...
 Done
-You may want to clean up by 'rm -rf /var/folders/3w/vqgzyw5d43s1vb1hm2hz3bzr0000gn/T//RtmpzFvUcy/Rd2pdf9aa19c21f41'
+You may want to clean up by 'rm -rf /var/folders/3w/vqgzyw5d43s1vb1hm2hz3bzr0000gn/T//RtmpkA8FgV/Rd2pdf14d63a8520bd'

@@ -1,13 +1,13 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  8 NOV 2013 02:32
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  8 NOV 2013 03:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/private/var/folders/3w/vqgzyw5d43s1vb1hm2hz3bzr0000gn/T/RtmpzFvUcy/Rd2pdf9aa
-19c21f41/Rd2.tex
+**/private/var/folders/3w/vqgzyw5d43s1vb1hm2hz3bzr0000gn/T/RtmpkA8FgV/Rd2pdf14d
+63a8520bd/Rd2.tex
 
-(/private/var/folders/3w/vqgzyw5d43s1vb1hm2hz3bzr0000gn/T/RtmpzFvUcy/Rd2pdf9aa1
-9c21f41/Rd2.tex
+(/private/var/folders/3w/vqgzyw5d43s1vb1hm2hz3bzr0000gn/T/RtmpkA8FgV/Rd2pdf14d6
+3a8520bd/Rd2.tex
 LaTeX2e <2011/06/27>
 Babel <3.9f> and hyphenation patterns for 78 languages loaded.
 
@@ -710,7 +710,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 )
-Overfull \vbox (4.07198pt too high) has occurred while \output is active []
+Overfull \vbox (16.07198pt too high) has occurred while \output is active []
 
 
 [1
@@ -719,11 +719,10 @@ Overfull \vbox (4.07198pt too high) has occurred while \output is active []
 {/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
-)
+) [2]
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
-) [2] (./Rd2.ind
-[3]
+) [3] [4] (./Rd2.ind [5]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 3.
 
@@ -731,31 +730,31 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 LaTeX Font Warning: Font shape `T1/fi4/m/it' undefined
 (Font)              using `T1/fi4/m/n' instead on input line 12.
 
-[4
+[6
 
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 178.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 178.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 264.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 264.
  (./Rd2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 178.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 178.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 264.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 264.
 Package rerunfilecheck Info: File `Rd2.out' has not changed.
 (rerunfilecheck)             Checksum: 5D0C6253F148603E2CFCD2BF6F8DCF47;200.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 178.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 264.
  ) 
 Here is how much of TeX's memory you used:
- 6313 strings out of 493315
- 90725 string characters out of 6137904
- 169832 words of memory out of 5000000
- 9630 multiletter control sequences out of 15000+600000
- 38736 words of font info for 47 fonts, out of 8000000 for 9000
+ 6319 strings out of 493315
+ 90786 string characters out of 6137904
+ 173832 words of memory out of 5000000
+ 9632 multiletter control sequences out of 15000+600000
+ 40684 words of font info for 49 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 38i,5n,27p,327b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,5n,27p,328b,592s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/t
 exlive/2013/texmf-dist/fonts/enc/dvips/inconsolata/fi4-ec.enc}</usr/local/texli
 ve/2013/texmf-dist/fonts/type1/public/inconsolata/Inconsolata.pfb></usr/local/t
@@ -765,10 +764,10 @@ xlive/2013/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2
 dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts
 /type1/urw/times/utmr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw
 /times/utmri8a.pfb>
-Output written on Rd2.pdf (4 pages, 70598 bytes).
+Output written on Rd2.pdf (6 pages, 75281 bytes).
 PDF statistics:
- 117 PDF objects out of 1000 (max. 8388607)
- 102 compressed objects within 2 object streams
- 36 named destinations out of 1000 (max. 500000)
+ 130 PDF objects out of 1000 (max. 8388607)
+ 113 compressed objects within 2 object streams
+ 40 named destinations out of 1000 (max. 500000)
  33 words of extra memory for PDF output out of 10000 (max. 10000000)
 

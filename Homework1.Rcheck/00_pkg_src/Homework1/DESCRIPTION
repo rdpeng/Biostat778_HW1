@@ -8,4 +8,3 @@ Maintainer: Yu Du<ydu@jhsph.edu>
 Description: Homework 1 in Advanced Statistics Computing Class which includes two functions.One function is to fit a fast linear model and the other function is to calculate multivariate normal densities.
 License: GPL
 Packaged: 2013-11-08 08:50:36 UTC; yudu
-Built: R 3.0.2; ; 2013-11-08 08:50:39 UTC; unix

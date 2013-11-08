@@ -1,7 +1,7 @@
 
-R version 3.0.2 (2013-09-25) -- "Frisbee Sailing"
+R version 3.0.2 Patched (2013-10-08 r64038) -- "Frisbee Sailing"
 Copyright (C) 2013 The R Foundation for Statistical Computing
-Platform: x86_64-apple-darwin10.8.0 (64-bit)
+Platform: x86_64-apple-darwin12.5.0 (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -30,7 +30,7 @@ Type 'q()' to quit R.
 > y <- X %*% b + rnorm(n)
 > 
 > fit <- fastlm(X, y)
-> print(drop(fit$coefficients))
+> print(fit$coefficients)
  [1] -1.35505545  1.68534061  0.82791539 -1.37484760  0.67450212 -1.39961140
  [7] -0.84374349  0.22179390  2.12469078 -0.63091154 -0.80697599  1.55788206
 [13] -0.68727364  0.92469861 -0.76145647  0.01195682  1.03832292  1.21646514
@@ -45,4 +45,4 @@ Type 'q()' to quit R.
 > 
 > proc.time()
    user  system elapsed 
-  0.166   0.022   0.180 
+  0.184   0.021   0.195 
