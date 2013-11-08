@@ -13,5 +13,5 @@ b <- rnorm(p)
 y <- X %*% b + rnorm(n)
 
 fit <- fastlm(X, y)
-print(fit$coefficients)
+print(drop(fit$coefficients))
 str(fit$vcov)
