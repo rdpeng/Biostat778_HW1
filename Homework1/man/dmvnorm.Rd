@@ -7,7 +7,7 @@
 %%  ~~function to do ... ~~
 }
 \description{
-Evaluates the k-dimensional multivariate Normal density with mean μ and covariance matrix S.
+Evaluates the k-dimensional multivariate Normal density with mean mu and covariance matrix S.
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
@@ -33,7 +33,7 @@ dmvnorm(x, mu, S, log = TRUE)
 }
 }
 \details{
-This function evaluates the k-dimensional multivariate Normal density with mean μ and covariance matrix S.
+This function evaluates the k-dimensional multivariate Normal density with mean mu and covariance matrix S.
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
@@ -52,56 +52,5 @@ A vector of length n of density values will be returned. n is the number of rows
         Yu Du           
 %%  ~~who you are~~
 }
-\note{
-%%  ~~further notes~~
-}
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
-\examples{
-## Create the covariance matrix
-n <- 100
-n2 <- n^2
-xg <- seq(0, 1, length = n)
-yg <- xg
-g <- data.matrix(expand.grid(xg, yg))
-D <- as.matrix(dist(g))
-phi <- 5
-
-S <- exp(-phi * D)
-mu <- rep(0, n2)
-set.seed(1)
-x <- matrix(rnorm(n2), byrow = TRUE, ncol = n2)
-dmvnorm(x, mu, S, log = TRUE)
-
-## The function is currently defined as
-function (x, mu, S, log = TRUE) 
-{
-    k = length(mu)
-    n = nrow(x)
-    R = tryCatch({
-        chol(S)
-    }, error = function(e) {
-        message("S is not positive definite")
-    })
-    logdetS = 2 * sum(log(diag(R)))
-    T = x - rep(1, n) \%*\% t(mu)
-    C = forwardsolve(t(R), t(T))
-    term3 = diag(crossprod(C))
-    fx = (-k/2) * log(2 * pi) - (1/2) * logdetS - (1/2) * term3
-    if (log == TRUE) {
-        fx = fx
-    }
-    else {
-        fx = exp(fx)
-    }
-    return(fx)
-  }
-}
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
