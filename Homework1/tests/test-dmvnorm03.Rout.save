@@ -28,6 +28,11 @@ Type 'q()' to quit R.
 > print(y, digits = 15)
 [1] -91.8938533204673
 > 
+> x <- rep(1, 100)
+> y <- dmvnorm(x, mu, S, log = TRUE)
+> print(y, digits = 15)
+[1] -141.893853320467
+> 
 > proc.time()
    user  system elapsed 
-  0.268   0.025   0.281 
+  0.282   0.027   0.295 
