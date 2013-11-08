@@ -1,0 +1,57 @@
+
+R version 3.0.2 Patched (2013-10-08 r64038) -- "Frisbee Sailing"
+Copyright (C) 2013 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin12.5.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> library(Homework1)
+> op <- options(scipen = 5)
+> 
+> set.seed(2)
+> ## Generate predictor matrix
+> n <- 1000 * 2
+> p <- 990 * 2
+> X <- cbind(1, matrix(rnorm(n * (p - 1)), n, p - 1))
+> 
+> ## Coefficents
+> b <- rnorm(p)
+> 
+> ## Response
+> y <- X %*% b + rnorm(n)
+> 
+> fit <- fastlm(X, y)
+> b.est <- drop(fit$coefficients)
+> set.seed(3)
+> sample(b.est, 20)
+ [1]  2.05530830  0.24814149  0.96337441 -0.48943541  1.06365073  1.18330955
+ [7]  0.59524769 -0.35616793 -0.31842329  0.69551168  0.38635506  0.06129811
+[13]  0.94855884  0.14099917 -1.33985724 -1.06127481 -0.80323409  0.09121532
+[19] -0.69230106  0.62745679
+> set.seed(4)
+> i <- sample(p, 5)
+> fit$vcov[i, i]
+            [,1]        [,2]           [,3]           [,4]        [,5]
+[1,]  0.09027668  0.02434438 -0.02115777556 -0.03033723440  0.02713450
+[2,]  0.02434438  0.13276015 -0.06678184085  0.01697429388 -0.04024170
+[3,] -0.02115778 -0.06678184  0.12294996686 -0.00007574715  0.06144542
+[4,] -0.03033723  0.01697429 -0.00007574715  0.06291470598 -0.01785301
+[5,]  0.02713450 -0.04024170  0.06144542173 -0.01785301136  0.13833170
+> 
+> options(op)
+> 
+> proc.time()
+   user  system elapsed 
+  2.159   0.098   1.577 
