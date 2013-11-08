@@ -30,7 +30,7 @@ Type 'q()' to quit R.
 > b <- rnorm(p)
 > 
 > ## Response
-> y <- X %*% b + rnorm(n)
+> y <- drop(X %*% b + rnorm(n))
 > 
 > fit <- fastlm(X, y)
 > b.est <- drop(fit$coefficients)
@@ -54,4 +54,4 @@ Type 'q()' to quit R.
 > 
 > proc.time()
    user  system elapsed 
-  2.159   0.098   1.577 
+  2.087   0.094   1.521 
