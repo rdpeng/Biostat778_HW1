@@ -1,0 +1,11 @@
+Package: Homework1
+Version: 1.0-0
+Date: 2013-11-8
+Title: Homework 1
+Description: Fast Linear Regression and Fast Multivariate Normal Density
+Author: Zhicheng Ji <zji4@jhu.edu>
+Maintainer: Zhicheng Ji <zji4@jhu.edu>
+License: GPL (>= 2)
+Depends:
+    R (>= 1.0.0)
+
