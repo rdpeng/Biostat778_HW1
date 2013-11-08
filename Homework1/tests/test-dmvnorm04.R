@@ -10,7 +10,7 @@ X <- matrix(rnorm(p * (p-1)), p, p-1)
 X <- cbind(X, X[, p-1])
 S <- crossprod(X)
 x <- rep(0, p)
-err <- try(y <- dmvnorm(x, mu, S, log = TRUE))
+err <- try(y <- dmvnorm(x, mu, S, log = TRUE), silent = TRUE)
 cat(err)
 
 options(op)
