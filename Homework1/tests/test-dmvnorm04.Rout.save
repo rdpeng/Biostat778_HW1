@@ -17,9 +17,10 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 'help.start()' for an HTML browser interface to help.
 Type 'q()' to quit R.
 
-> ## Check `log = FALSE'
+> ## `S' rank deficient
 > 
 > library(Homework1)
+Homework1: Code for Homework 1 (version 1.1)
 > op <- options(scipen = 5)
 > 
 > set.seed(20)
@@ -29,8 +30,7 @@ Type 'q()' to quit R.
 > X <- cbind(X, X[, p-1])
 > S <- crossprod(X)
 > x <- rep(0, p)
-> err <- try(y <- dmvnorm(x, mu, S, log = TRUE))
-Error in dmvnorm(x, mu, S, log = TRUE) : S is not positive definite
+> err <- try(y <- dmvnorm(x, mu, S, log = TRUE), silent = TRUE)
 > cat(err)
 Error in dmvnorm(x, mu, S, log = TRUE) : S is not positive definite
 > 
@@ -38,4 +38,4 @@ Error in dmvnorm(x, mu, S, log = TRUE) : S is not positive definite
 > 
 > proc.time()
    user  system elapsed 
-  0.263   0.024   0.276 
+  0.253   0.024   0.267 
