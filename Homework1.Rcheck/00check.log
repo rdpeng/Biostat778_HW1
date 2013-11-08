@@ -46,9 +46,12 @@
 * checking tests ... OK
   Running ‘test-dmvnorm01.R’
   Comparing ‘test-dmvnorm01.Rout’ to ‘test-dmvnorm01.Rout.save’ ... OK
+  Running ‘test-dmvnorm02.R’
+  Comparing ‘test-dmvnorm02.Rout’ to ‘test-dmvnorm02.Rout.save’ ... OK
+  Running ‘test-dmvnorm03.R’
+  Comparing ‘test-dmvnorm03.Rout’ to ‘test-dmvnorm03.Rout.save’ ... OK
   Running ‘test-fastlm01.R’
-  Comparing ‘test-fastlm01.Rout’ to ‘test-fastlm01.Rout.save’ ...18c18
-< > print(drop(fit$coefficients))
----
-> > print(fit$coefficients)
+  Comparing ‘test-fastlm01.Rout’ to ‘test-fastlm01.Rout.save’ ... OK
+  Running ‘test-fastlm02.R’
+  Comparing ‘test-fastlm02.Rout’ to ‘test-fastlm02.Rout.save’ ... OK
 * checking PDF version of manual ... OK

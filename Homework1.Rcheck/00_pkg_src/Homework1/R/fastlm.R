@@ -3,7 +3,7 @@ fastlm=function(X,y,na.rm=FALSE){
         if(na.rm==TRUE){
                 r=cbind(X,y)
                 X=X[complete.cases(r),]
-                y=as.matrix(y[complete.cases(r),])
+                y=as.matrix(y[complete.cases(r)])
         }
         
         ##Cholesky factorization for coefficients

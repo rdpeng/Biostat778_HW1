@@ -18,6 +18,7 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 Type 'q()' to quit R.
 
 > library(Homework1)
+> op <- options(scipen = 5)
 > 
 > n <- 10
 > n2 <- n^2
@@ -36,6 +37,8 @@ Type 'q()' to quit R.
 > print(y, digits = 10)
 [1] -154.9475445
 > 
+> options(op)
+> 
 > proc.time()
    user  system elapsed 
-  0.256   0.023   0.268 
+  0.276   0.023   0.290 

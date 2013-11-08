@@ -16,6 +16,7 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 Type 'q()' to quit R.
 
 > library(Homework1)
+> op <- options(scipen = 5)
 > 
 > set.seed(2)
 > ## Generate predictor matrix
@@ -41,8 +42,10 @@ Type 'q()' to quit R.
 [43]  1.51887684  2.49052327 -0.95376876  2.16754658  1.38735744 -0.30704992
 [49] -0.95042610 -0.45199298
 > str(fit$vcov)
- num [1:50, 1:50] 1.05e-03 -6.09e-05 -1.07e-05 -6.56e-05 -2.51e-05 ...
+ num [1:50, 1:50] 0.0010516 -0.0000609 -0.0000107 -0.0000656 -0.0000251 ...
+> 
+> options(op)
 > 
 > proc.time()
    user  system elapsed 
-  0.160   0.017   0.169 
+  0.162   0.019   0.172 

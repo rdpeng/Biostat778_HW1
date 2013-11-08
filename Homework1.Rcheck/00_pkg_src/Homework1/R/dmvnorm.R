@@ -1,5 +1,8 @@
 ##Fast Multivariate Normal Density
 dmvnorm <- function(x, mu, S, log = TRUE) {
+        if (!is.matrix(x)){
+                x=t(as.matrix(x))
+        }
         k=length(mu)
         n=nrow(x)
         

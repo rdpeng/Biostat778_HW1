@@ -15,28 +15,23 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 'help.start()' for an HTML browser interface to help.
 Type 'q()' to quit R.
 
+> ## Check `log = FALSE'
+> 
 > library(Homework1)
 > op <- options(scipen = 5)
 > 
-> n <- 10
-> n2 <- n^2
-> xg <- seq(0, 1, length = n)
-> yg <- xg
-> g <- data.matrix(expand.grid(xg, yg))
-> D <- as.matrix(dist(g))
-> phi <- 5
-> 
-> S <- exp(-phi * D)
-> mu <- rep(0, n2)
-> set.seed(1)
-> x <- matrix(rnorm(n2), byrow = TRUE, ncol = n2)
-> 
+> mu <- rep(0, 10)
+> S <- diag(2, 10)
+> x <- matrix(rbind(rep(0, 10), rep(1, 10)), 2, 10)
+> y <- dmvnorm(x, mu, S, log = FALSE)
+> print(y, digits = 10)
+[1] 0.000003191175433 0.000000261947631
 > y <- dmvnorm(x, mu, S, log = TRUE)
 > print(y, digits = 10)
-[1] -154.9475445
+[1] -12.65512123 -15.15512123
 > 
 > options(op)
 > 
 > proc.time()
    user  system elapsed 
-  0.154   0.017   0.163 
+  0.152   0.017   0.162 
