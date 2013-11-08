@@ -23,14 +23,14 @@ Type 'q()' to quit R.
 > 
 > mu <- rep(0, 10)
 > S <- diag(2, 10)
-> x <- matrix(rep(0, 20), 2, 10)
+> x <- matrix(rbind(rep(0, 10), rep(1, 10)), 2, 10)
 > y <- dmvnorm(x, mu, S, log = FALSE)
-> print(y, digits = 10)
-[1] 0.000003191175433 0.000003191175433
+> print(y, digits = 15)
+[1] 0.000003191175432669325 0.000000261947630999281
 > y <- dmvnorm(x, mu, S, log = TRUE)
-> print(y, digits = 10)
-[1] -12.65512123 -12.65512123
+> print(y, digits = 15)
+[1] -12.6551212348465 -15.1551212348465
 > 
 > proc.time()
    user  system elapsed 
-  0.267   0.024   0.280 
+  0.263   0.024   0.276 
