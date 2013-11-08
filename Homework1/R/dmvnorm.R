@@ -9,7 +9,8 @@ dmvnorm <- function(x, m, S, log = TRUE) {
         R <- suppressWarnings(chol(S, pivot = TRUE))
         if(attr(R, "rank") != k)
                 stop("S is not positive definite")
-        z <- backsolve(R, t(d), transpose = TRUE)
+        pivot <- attr(R, "pivot")
+        z <- backsolve(R, t(d[, pivot, drop = FALSE]), transpose = TRUE)
         distval <- colSums(z * z)
         logdet <- 2 * sum(log(diag(R)))
         r <- -(k * log(2 * pi) + logdet + distval) / 2
