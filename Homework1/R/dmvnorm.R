@@ -4,7 +4,7 @@
 dmvnorm <- function(x, m, S, log = TRUE) {
         k <- NCOL(x)
         d <- sweep(x, 2, m, "-")
-        R <- try(chol(S, pivot = FALSE))
+        R <- try(chol(S, pivot = FALSE), silent = TRUE)
         if(inherits(R, "try-error"))
                 stop("S is not positive definite")
         z <- backsolve(R, t(d), transpose = TRUE)
