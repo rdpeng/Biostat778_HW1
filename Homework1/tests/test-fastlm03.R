@@ -11,7 +11,7 @@ X <- cbind(1, matrix(rnorm(n * (p - 1)), n, p - 1))
 b <- rnorm(p)
 
 ## Response
-y <- X %*% b + rnorm(n)
+y <- drop(X %*% b + rnorm(n))
 
 fit <- fastlm(X, y)
 print(drop(fit$coefficients))
