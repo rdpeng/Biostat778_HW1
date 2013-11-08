@@ -2,7 +2,9 @@
 ## 'x' is n x p
 ## 'm' is p x 1
 dmvnorm <- function(x, m, S, log = TRUE) {
-        k <- NCOL(x)
+        if(is.null(dim(x)))
+                x <- matrix(x, byrow = TRUE, ncol = length(x))
+        k <- ncol(x)
         d <- sweep(x, 2, m, "-")
         R <- try(chol(S, pivot = FALSE), silent = TRUE)
         if(inherits(R, "try-error"))
