@@ -7,6 +7,8 @@ R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
 Type 'license()' or 'licence()' for distribution details.
 
+  Natural language support but running in an English locale
+
 R is a collaborative project with many contributors.
 Type 'contributors()' for more information and
 'citation()' on how to cite R or R packages in publications.
@@ -16,6 +18,7 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 Type 'q()' to quit R.
 
 > library(Homework1)
+> op <- options(scipen = 5)
 > 
 > set.seed(2)
 > ## Generate predictor matrix
@@ -30,7 +33,7 @@ Type 'q()' to quit R.
 > y <- X %*% b + rnorm(n)
 > 
 > fit <- fastlm(X, y)
-> print(fit$coefficients)
+> print(drop(fit$coefficients))
  [1] -1.35505545  1.68534061  0.82791539 -1.37484760  0.67450212 -1.39961140
  [7] -0.84374349  0.22179390  2.12469078 -0.63091154 -0.80697599  1.55788206
 [13] -0.68727364  0.92469861 -0.76145647  0.01195682  1.03832292  1.21646514
@@ -41,8 +44,10 @@ Type 'q()' to quit R.
 [43]  1.51887684  2.49052327 -0.95376876  2.16754658  1.38735744 -0.30704992
 [49] -0.95042610 -0.45199298
 > str(fit$vcov)
- num [1:50, 1:50] 1.05e-03 -6.09e-05 -1.07e-05 -6.56e-05 -2.51e-05 ...
+ num [1:50, 1:50] 0.0010516 -0.0000609 -0.0000107 -0.0000656 -0.0000251 ...
+> 
+> options(op)
 > 
 > proc.time()
    user  system elapsed 
-  0.184   0.021   0.195 
+  0.263   0.023   0.275 

@@ -1,4 +1,5 @@
 library(Homework1)
+op <- options(scipen = 5)
 
 n <- 10
 n2 <- n^2
@@ -15,3 +16,5 @@ x <- matrix(rnorm(n2), byrow = TRUE, ncol = n2)
 
 y <- dmvnorm(x, mu, S, log = TRUE)
 print(y, digits = 10)
+
+options(op)
