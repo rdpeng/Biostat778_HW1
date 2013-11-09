@@ -24,14 +24,14 @@ This package mainly uses Cholesky decomposition when computing the inverse matri
 }
 \author{
 %Who wrote it
-Lu Li}
+Lu Li
 
-\maintainer{
+Maintainer
 Lu Li <lli48@jhu.edu>
 }
 \references{
 %~~ Literature or other references for background information ~~
-PH140.778 Advanced Statistical Computing}
+PH140.778 Advanced Statistical Computing Dr.Peng}
 %~~ Optionally other standard keywords, one per line, from file KEYWORDS in the ~~
 %~~ R documentation directory ~~
 \keyword{ package }

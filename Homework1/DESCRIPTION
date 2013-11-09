@@ -1,9 +1,9 @@
 Package: Homework1
 Type: Package
-Title: What the package does (short line)
+Title:PH140.778 Advanced Statistical Computing HW1
 Version: 1.0
 Date: 2013-11-09
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Author: Lu Li
+Maintainer: Lu Li<lli48@jhu.edu>
+Description: This package gives faster ways to fit a linear regression model and compute the multivariate normal density
+License: GPL 

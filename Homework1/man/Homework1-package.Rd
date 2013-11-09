@@ -31,7 +31,7 @@ Lu Li <lli48@jhu.edu>
 }
 \references{
 %~~ Literature or other references for background information ~~
-PH140.778 Advanced Statistical Computing}
+PH140.778 Advanced Statistical Computing Dr.Peng}
 %~~ Optionally other standard keywords, one per line, from file KEYWORDS in the ~~
 %~~ R documentation directory ~~
 \keyword{ package }

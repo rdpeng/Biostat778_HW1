@@ -27,9 +27,7 @@ a k*k covariance matrix}
 %%     ~~Describe \code{log} here~~
 whether the return should be the log density. Default is TRUE}
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+
 \value{
 %%  ~Describe the value returned
 %%  If it is a LIST, use
@@ -39,6 +37,7 @@ whether the return should be the log density. Default is TRUE}
 This funtion returns a vector of length n containing the values of the multivariate Normal density evaluated at the n points. If log = TRUE, it returns the log density at those points. If log = FALSE, it returns the density values.}
 \references{
 %% ~put references to the literature/web site here ~
+PH140.778 Advanced Statistical Computing Dr.Peng
 }
 \author{
 %%  ~~who you are~~
@@ -67,6 +66,21 @@ function (x, mu, S, log = TRUE)
     }
     return(density)
   }
+  n <- 10
+n2 <- n^2
+xg <- seq(0, 1, length = n)
+yg <- xg
+g <- data.matrix(expand.grid(xg, yg))
+D <- as.matrix(dist(g))
+phi <- 5
+
+S <- exp(-phi * D)
+mu <- rep(0, n2)
+set.seed(1)
+x <- matrix(rnorm(n2), byrow = TRUE, ncol = n2)
+
+dmvnorm(x, mu, S, log = TRUE)
+
 }
 
 

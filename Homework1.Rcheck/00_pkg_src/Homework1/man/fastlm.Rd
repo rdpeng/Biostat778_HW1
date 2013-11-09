@@ -53,15 +53,7 @@ PH140.778 Advanced Statistical Computing
 %%  ~~who you are~~
 Lu Li
 }
-\note{
-%%  ~~further notes~~
-}
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
 %## The function is currently defined as
 function (X, y, na.rm = FALSE) 

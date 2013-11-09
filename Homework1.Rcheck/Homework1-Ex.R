@@ -1,7 +1,6 @@
 pkgname <- "Homework1"
 source(file.path(R.home("share"), "R", "examples-header.R"))
 options(warn = 1)
-options(pager = "console")
 library('Homework1')
 
 base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
@@ -39,6 +38,21 @@ function (x, mu, S, log = TRUE)
     }
     return(density)
   }
+  n <- 10
+n2 <- n^2
+xg <- seq(0, 1, length = n)
+yg <- xg
+g <- data.matrix(expand.grid(xg, yg))
+D <- as.matrix(dist(g))
+phi <- 5
+
+S <- exp(-phi * D)
+mu <- rep(0, n2)
+set.seed(1)
+x <- matrix(rnorm(n2), byrow = TRUE, ncol = n2)
+
+dmvnorm(x, mu, S, log = TRUE)
+
 
 
 
