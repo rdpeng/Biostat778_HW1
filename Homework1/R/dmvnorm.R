@@ -4,8 +4,8 @@ dmvnorm<-function(x, mu, S, log=TRUE)
             {stop("S is not positive definite")})
       
       k<-length(mu)
-      x<-matrix(x,ncol=k)
-      mu<-as.vector(mu)
+      if(is.matrix(x)==F) x<-matrix(x,ncol=k)
+      if(is.vector(mu)==F) mu<-as.vector(mu)
       
       ## calculate log density
       a<-forwardsolve(t(cs),t(x)-mu)

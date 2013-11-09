@@ -8,8 +8,8 @@ fastlm<-function(X, y, na.rm=FALSE)
       }
       
       p<-length(beta)
-      X<-matrix(X,ncol=p)
-      y<-as.vector(y)
+      if(is.matrix(X)==F) X<-matrix(X,ncol=p)
+      if(is.vector(y)==F) y<-as.vector(y)
       
       ## calculate estimated beta
       b<-crossprod(X,y)
