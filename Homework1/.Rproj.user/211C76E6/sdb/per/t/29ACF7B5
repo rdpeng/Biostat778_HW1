@@ -1,12 +1,12 @@
 {
-    "contents" : "fastlm<-function(X, y, na.rm=FALSE)\n{\n      if(na.rm==T)\n      {\n            notna<-complete.cases(X,y)\n            X<-X[notna,]\n            y<-y[notna]\n      }\n      \n      ## calculate estimated beta\n      b<-crossprod(X,y)\n      cx<-chol(crossprod(X))\n      temp<-forwardsolve(t(cx),b)\n      beta<-as.vector(backsolve(cx,temp))\n      \n      ## calculate covariance matrix of estimated beta\n      e_var<-(sum(y^2)-sum(b*beta))/(length(y)-length(beta))\n      vcov<-e_var*chol2inv(cx)\n      \n      ## return result list\n      list(coefficients=beta,vcov=vcov)\n}\n\n",
+    "contents" : "fastlm<-function(X, y, na.rm=FALSE)\n{\n      if(na.rm==T)\n      {\n            notna<-complete.cases(X,y)\n            X<-X[notna,]\n            y<-y[notna]\n      }\n      \n      p<-length(beta)\n      X<-matrix(X,ncol=p)\n      y<-as.vector(y)\n      \n      ## calculate estimated beta\n      b<-crossprod(X,y)\n      cx<-chol(crossprod(X))\n      temp<-forwardsolve(t(cx),b)\n      beta<-as.vector(backsolve(cx,temp))\n      \n      ## calculate covariance matrix of estimated beta\n      e_var<-(sum(y^2)-sum(b*beta))/(length(y)-p)\n      vcov<-e_var*chol2inv(cx)\n      \n      ## return result list\n      list(coefficients=beta,vcov=vcov)\n}\n\n",
     "created" : 1383870871429.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "875747604",
+    "hash" : "2631513310",
     "id" : "29ACF7B5",
-    "lastKnownWriteTime" : 1383961198,
+    "lastKnownWriteTime" : 1383965225,
     "path" : "~/Documents/778/Biostat778_HW1/Homework1/R/fastlm.R",
     "project_path" : "R/fastlm.R",
     "properties" : {
