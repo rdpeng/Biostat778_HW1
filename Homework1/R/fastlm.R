@@ -1,20 +1,23 @@
 fastlm<-function(X, y, na.rm=FALSE)
 {
+      if(na.rm==T)
+      {
+            notna<-complete.cases(X,y)
+            X<-X[notna,]
+            y<-y[notna]
+      }
+      
       ## calculate estimated beta
       b<-crossprod(X,y)
-      XX<-crossprod(X)
-      cx<-chol(XX)
+      cx<-chol(crossprod(X))
       temp<-forwardsolve(t(cx),b)
-      beta<-backsolve(cx,temp)
+      beta<-as.vector(backsolve(cx,temp))
       
       ## calculate covariance matrix of estimated beta
-      n<-length(y)
-      p<-ncol(X)
-      e<-(y-tcrossprod(X,t(beta)))
-      e_var<-sum(e^2)/(n-p)
+      e_var<-(sum(y^2)-sum(b*beta))/(length(y)-length(beta))
       vcov<-e_var*chol2inv(cx)
       
       ## return result list
-      result<-list(coefficients=beta,vcov=vcov)
+      list(coefficients=beta,vcov=vcov)
 }
 
