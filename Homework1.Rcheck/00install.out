@@ -1,0 +1,12 @@
+* installing *source* package 'Homework1' ...
+** R
+** preparing package for lazy loading
+** help
+Warning: C:/Users/Lu/Documents/GitHub/Biostat778_HW1/Homework1.Rcheck/00_pkg_src/Homework1/man/Homework1-package.Rd:29: unexpected UNKNOWN '\maintainer'
+Warning: C:/Users/Lu/Documents/GitHub/Biostat778_HW1/Homework1.Rcheck/00_pkg_src/Homework1/man/Homework1-package.Rd:30: All text must be in a section
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded
+*** arch - i386
+*** arch - x64
+* DONE (Homework1)

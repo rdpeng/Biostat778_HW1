@@ -1,0 +1,71 @@
+* using log directory 'C:/Users/Lu/Documents/GitHub/Biostat778_HW1/Homework1.Rcheck'
+* using R version 3.0.1 (2013-05-16)
+* using platform: x86_64-w64-mingw32 (64-bit)
+* using session charset: ISO8859-1
+* checking for file 'Homework1/DESCRIPTION' ... OK
+* checking extension type ... Package
+* this is package 'Homework1' version '1.0'
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for .dll and .exe files ... OK
+* checking for hidden files and directories ... OK
+* checking for portable file names ... OK
+* checking whether package 'Homework1' can be installed ... WARNING
+Found the following significant warnings:
+  Warning: C:/Users/Lu/Documents/GitHub/Biostat778_HW1/Homework1.Rcheck/00_pkg_src/Homework1/man/Homework1-package.Rd:29: unexpected UNKNOWN '\maintainer'
+  Warning: C:/Users/Lu/Documents/GitHub/Biostat778_HW1/Homework1.Rcheck/00_pkg_src/Homework1/man/Homework1-package.Rd:30: All text must be in a section
+See 'C:/Users/Lu/Documents/GitHub/Biostat778_HW1/Homework1.Rcheck/00install.out' for details.
+* checking package directory ... OK
+* checking DESCRIPTION meta-information ... WARNING
+Non-standard license specification:
+  What license is it under?
+Standardizable: FALSE
+* checking top-level files ... OK
+* checking for left-over files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking loading without being on the library search path ... OK
+* checking for unstated dependencies in R code ... OK
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... OK
+* checking Rd files ... WARNING
+prepare_Rd: Homework1-package.Rd:29: unexpected UNKNOWN '\maintainer'
+prepare_Rd: Homework1-package.Rd:30: All text must be in a section
+prepare_Rd: dmvnorm.Rd:30-32: Dropping empty section \details
+prepare_Rd: dmvnorm.Rd:40-42: Dropping empty section \references
+prepare_Rd: fastlm.Rd:56-58: Dropping empty section \note
+prepare_Rd: fastlm.Rd:62-64: Dropping empty section \seealso
+* checking Rd metadata ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... OK
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking examples ... OK
+* checking PDF version of manual ... WARNING
+LaTeX errors when creating PDF version.
+This typically indicates Rd problems.
+LaTeX errors found:
+! Font T1/zi4/m/n/10=t1-zi4r-0 at 10.0pt not loadable: Metric (TFM) file not fo
+und.
+<to be read again> 
+                   relax 
+l.21 ...mplain to }\email{yourfault@somewhere.net}
+! Font T1/zi4/m/n/9=t1-zi4r-0 at 9.0pt not loadable: Metric (TFM) file not foun
+d.
+<to be read again> 
+                   relax 
+l.106 \begin{ExampleCode}
+* checking PDF version of manual without hyperrefs or index ... ERROR

@@ -1,0 +1,169 @@
+
+R version 3.0.1 (2013-05-16) -- "Good Sport"
+Copyright (C) 2013 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> pkgname <- "Homework1"
+> source(file.path(R.home("share"), "R", "examples-header.R"))
+> options(warn = 1)
+> options(pager = "console")
+> library('Homework1')
+> 
+> base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> cleanEx()
+> nameEx("dmvnorm")
+> ### * dmvnorm
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: dmvnorm
+> ### Title: Computing the Multivariate Normal Density MORE Efficiently
+> ### Aliases: dmvnorm
+> 
+> ### ** Examples
+> 
+> 
+> 
+> ## The function is currently defined as
+> function (x, mu, S, log = TRUE) 
++ {
++     k = length(mu)
++     n = nrow(x)
++     Q = tryCatch({
++         chol(S)
++     }, error = function(li) {
++         message("S cannot be a covariance matrix")
++     })
++     temp1 = x - rep(1, n) %*% t(mu)
++     A = forwardsolve(t(Q), t(temp1))
++     temp2 = diag(crossprod(A))
++     density = (-k/2) * log(2 * pi) - (1/2) * 2 * sum(log(diag(Q))) - 
++         (1/2) * temp2
++     if (log == FALSE) {
++         density = exp(density)
++     }
++     return(density)
++   }
+function (x, mu, S, log = TRUE) 
+{
+    k = length(mu)
+    n = nrow(x)
+    Q = tryCatch({
+        chol(S)
+    }, error = function(li) {
+        message("S cannot be a covariance matrix")
+    })
+    temp1 = x - rep(1, n) %*% t(mu)
+    A = forwardsolve(t(Q), t(temp1))
+    temp2 = diag(crossprod(A))
+    density = (-k/2) * log(2 * pi) - (1/2) * 2 * sum(log(diag(Q))) - 
+        (1/2) * temp2
+    if (log == FALSE) {
+        density = exp(density)
+    }
+    return(density)
+}
+> 
+> 
+> 
+> cleanEx()
+> nameEx("fastlm")
+> ### * fastlm
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: fastlm
+> ### Title: Faster Way to Fit Linear Regression Models
+> ### Aliases: fastlm
+> ### Keywords: Cholesky decomposition Linear Regression Model
+> 
+> ### ** Examples
+> 
+> function (X, y, na.rm = FALSE) 
++ {
++     n <- length(y)
++     p <- ncol(X)
++     
++     ##Check if missing values in X and y should be removed
++     if (na.rm == TRUE) {
++         Z = cbind(X, y)
++         X = X[complete.cases(Z), ]
++         y = as.matrix(y[complete.cases(Z)])
++     }
++     A <- crossprod(X)
++     C <- crossprod(X, y)
++     
++     ##Cholesky decomposition
++     Q <- chol(A)
++     temp1 <- forwardsolve(t(Q), C)
++     betahat <- backsolve(Q, temp1)
++     cov_beta <- chol2inv(Q) * as.numeric(crossprod(y - X %*% 
++         betahat)/(n - p))
++     return(list(coeffients = betahat, vcov = cov_beta))
++   }
+function (X, y, na.rm = FALSE) 
+{
+    n <- length(y)
+    p <- ncol(X)
+    if (na.rm == TRUE) {
+        Z = cbind(X, y)
+        X = X[complete.cases(Z), ]
+        y = as.matrix(y[complete.cases(Z)])
+    }
+    A <- crossprod(X)
+    C <- crossprod(X, y)
+    Q <- chol(A)
+    temp1 <- forwardsolve(t(Q), C)
+    betahat <- backsolve(Q, temp1)
+    cov_beta <- chol2inv(Q) * as.numeric(crossprod(y - X %*% 
+        betahat)/(n - p))
+    return(list(coeffients = betahat, vcov = cov_beta))
+}
+>     set.seed(2)
+> ## Generate predictor matrix
+>     n <- 100
+>     p <- 5
+>     X <- cbind(1, matrix(rnorm(n * (p - 1)), n, p - 1))
+> 
+> ## Coefficents
+>     b <- rnorm(p)
+> 
+> ## Response
+>     y <-X%*%b + rnorm(n)
+> 
+>     fit <- fastlm(X, y)
+>     str(fit)
+List of 2
+ $ coeffients: num [1:5, 1] -0.255 -2.79 -0.949 -0.965 0.664
+ $ vcov      : num [1:5, 1:5] 0.010011 0.000167 -0.000225 -0.000895 -0.003306 ...
+> 
+> 
+> 
+> ### * <FOOTER>
+> ###
+> options(digits = 7L)
+> base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
+Time elapsed:  0.21 0.02 0.21 NA NA 
+> grDevices::dev.off()
+null device 
+          1 
+> ###
+> ### Local variables: ***
+> ### mode: outline-minor ***
+> ### outline-regexp: "\\(> \\)?### [*]+" ***
+> ### End: ***
+> quit('no')
