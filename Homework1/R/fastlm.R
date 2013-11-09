@@ -16,7 +16,7 @@ fastlm=function(X,y,na.rm=FALSE){
         ##Calculate VCOV
         n=length(y)
         p=ncol(X)
-        sigmahat2=crossprod(y-X%*%coefficients)/(n-p)
+        sigmahat2=(crossprod(y)-crossprod(coefficients,B))/(n-p)
         Ainv=chol2inv(R)
         vcov=as.numeric(sigmahat2)*Ainv
         
