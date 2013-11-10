@@ -74,8 +74,7 @@ function (X, y, na.rm = FALSE)
     Q <- chol(A)
     temp1 <- forwardsolve(t(Q), C)
     betahat <- backsolve(Q, temp1)
-    cov_beta <- chol2inv(Q) * as.numeric(crossprod(y - X \%*\% 
-        betahat)/(n - p))
+    cov_beta <- chol2inv(Q) * as.numeric(crossprod(y)-crossprod(y,X\%*\%betahat)/(n - p))
     return(list(coeffients = betahat, vcov = cov_beta))
   }
     set.seed(2)

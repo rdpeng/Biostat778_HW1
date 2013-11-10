@@ -1,0 +1,51 @@
+
+R version 3.0.1 (2013-05-16) -- "Good Sport"
+Copyright (C) 2013 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin10.8.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> ## Remove missing values
+> 
+> library(Homework1)
+> library(datasets)
+> data(airquality)
+> op <- options(scipen = 5)
+> 
+> X <- cbind(1, data.matrix(airquality[, -1]))
+> y <- airquality$Ozone
+> 
+> fit <- fastlm(X, y, na.rm = TRUE)
+> print(drop(fit$coefficients))
+NULL
+> print(fit$vcov)
+              [,1]           [,2]          [,3]         [,4]         [,5]
+[1,] 393.876625047  0.00474374944 -7.2147477143 -3.640510476 -3.289372370
+[2,]   0.004743749  0.00039173642 -0.0002738109 -0.001492460  0.005570875
+[3,]  -7.214747714 -0.00027381090  0.2967089651  0.056399038 -0.009288359
+[4,]  -3.640510476 -0.00149245983  0.0563990383  0.053581446 -0.120169284
+[5,]  -3.289372370  0.00557087510 -0.0092883587 -0.120169284  1.636108222
+[6,]  -0.834022213  0.00009320327 -0.0002661257  0.003427258 -0.006648643
+               [,6]
+[1,] -0.83402221255
+[2,]  0.00009320327
+[3,] -0.00026612572
+[4,]  0.00342725760
+[5,] -0.00664864269
+[6,]  0.03767762538
+> 
+> options(op)
+> 
+> proc.time()
+   user  system elapsed 
+  0.222   0.029   0.254 

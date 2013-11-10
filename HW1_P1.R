@@ -1,4 +1,4 @@
-#define function
+#define function fastlm
 fastlm<-function(X, y, na.rm = FALSE) {
         n<-length(y)
         p<-ncol(X)
@@ -21,7 +21,7 @@ fastlm<-function(X, y, na.rm = FALSE) {
         betahat<-backsolve(Q,temp1) 
     
     #calculate covirance of beta
-        cov_beta<-chol2inv(Q)*as.numeric(crossprod(y-X%*%betahat)/(n-p))
+        cov_beta<-chol2inv(Q)*as.numeric(crossprod(y)-crossprod(y,X%*%b)/(n-p))
     
         return(list(coeffients=betahat,vcov=cov_beta))
 }

@@ -1,0 +1,39 @@
+
+R version 3.0.1 (2013-05-16) -- "Good Sport"
+Copyright (C) 2013 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin10.8.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> ## Check `log = FALSE'
+> 
+> library(Homework1)
+> op <- options(scipen = 5)
+> 
+> mu <- rep(0, 100)
+> S <- diag(1, 100)
+> x <- rep(0, 100)
+> y <- dmvnorm(x, mu, S, log = TRUE)
+> print(y, digits = 10)
+[1] -91.89385332
+> 
+> x <- rep(1, 100)
+> y <- dmvnorm(x, mu, S, log = TRUE)
+> print(y, digits = 10)
+[1] -141.8938533
+> 
+> options(op)
+> 
+> proc.time()
+   user  system elapsed 
+  0.209   0.029   0.226 

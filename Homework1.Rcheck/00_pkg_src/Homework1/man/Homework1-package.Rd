@@ -20,7 +20,7 @@ License: \tab GPL\cr
 }
 %~~ An overview of how to use the package, including the most important ~~
 %~~ functions ~~
-This package mainly uses Cholesky decomposition when computing the inverse matrix.  
+This package mainly uses Cholesky decomposition when computing the inverse matrix and takes advanges of matrix property as well.   
 }
 \author{
 %Who wrote it

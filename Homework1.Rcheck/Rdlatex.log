@@ -4,8 +4,8 @@ This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013)
  restricted \write18 enabled.
 entering extended mode
 
-(/private/var/folders/ds/gld1lv9n44x3mw3n6s4hv5dc0000gn/T/RtmpY5HY9P/Rd2pdff777
-a536fba/Rd2.tex
+(/private/var/folders/ds/gld1lv9n44x3mw3n6s4hv5dc0000gn/T/RtmpYXp0V7/Rd2pdf1cb0
+64c390cf/Rd2.tex
 LaTeX2e <2011/06/27>
 Babel <3.9f> and hyphenation patterns for 78 languages loaded.
 
@@ -71,28 +71,26 @@ No file Rd2.aux.
 (/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
 (/usr/local/texlive/2013/texmf-dist/tex/latex/inconsolata/t1fi4.fd)
 (/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/t1phv.fd)
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def)
-Underfull \vbox (badness 3861) has occurred while \output is active [1{/usr/loc
-al/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def) [1{/usr/local/texl
+ive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def) [2]
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def) [3]
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def) [3] [4]
 No file Rd2.ind.
-[4] (./Rd2.aux)
+[5] (./Rd2.aux)
 
 Package rerunfilecheck Warning: File `Rd2.out' has changed.
 (rerunfilecheck)                Rerun to get outlines right
 (rerunfilecheck)                or use package `bookmark'.
 
- )
-(see the transcript file for additional information){/usr/local/texlive/2013/te
-xmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/texlive/2013/texmf-dist/fonts/
-enc/dvips/inconsolata/fi4-ec.enc}</usr/local/texlive/2013/texmf-dist/fonts/type
-1/public/inconsolata/Inconsolata.pfb></usr/local/texlive/2013/texmf-dist/fonts/
-type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/u
-rw/times/utmb8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/u
-tmr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-</usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (4 pages, 68913 bytes).
+ ){/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/t
+exlive/2013/texmf-dist/fonts/enc/dvips/inconsolata/fi4-ec.enc}</usr/local/texli
+ve/2013/texmf-dist/fonts/type1/public/inconsolata/Inconsolata.pfb></usr/local/t
+exlive/2013/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/
+2013/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2013/texmf
+-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2013/texmf-dist/font
+s/type1/urw/times/utmr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/ur
+w/times/utmri8a.pfb>
+Output written on Rd2.pdf (5 pages, 69494 bytes).
 Transcript written on Rd2.log.
 This is makeindex, version 2.15 [TeX Live 2013] (kpathsea + Thai support).
 Scanning input file ./Rd2.idx....done (7 entries accepted, 0 rejected).
@@ -104,8 +102,8 @@ This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013)
  restricted \write18 enabled.
 entering extended mode
 
-(/private/var/folders/ds/gld1lv9n44x3mw3n6s4hv5dc0000gn/T/RtmpY5HY9P/Rd2pdff777
-a536fba/Rd2.tex
+(/private/var/folders/ds/gld1lv9n44x3mw3n6s4hv5dc0000gn/T/RtmpYXp0V7/Rd2pdf1cb0
+64c390cf/Rd2.tex
 LaTeX2e <2011/06/27>
 Babel <3.9f> and hyphenation patterns for 78 languages loaded.
 
@@ -200,7 +198,7 @@ ype1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/ur
 w/times/utmb8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/ut
 mr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><
 /usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (6 pages, 78581 bytes).
+Output written on Rd2.pdf (6 pages, 78695 bytes).
 Transcript written on Rd2.log.
 This is makeindex, version 2.15 [TeX Live 2013] (kpathsea + Thai support).
 Scanning input file ./Rd2.idx....done (7 entries accepted, 0 rejected).
@@ -212,8 +210,8 @@ This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013)
  restricted \write18 enabled.
 entering extended mode
 
-(/private/var/folders/ds/gld1lv9n44x3mw3n6s4hv5dc0000gn/T/RtmpY5HY9P/Rd2pdff777
-a536fba/Rd2.tex
+(/private/var/folders/ds/gld1lv9n44x3mw3n6s4hv5dc0000gn/T/RtmpYXp0V7/Rd2pdf1cb0
+64c390cf/Rd2.tex
 LaTeX2e <2011/06/27>
 Babel <3.9f> and hyphenation patterns for 78 languages loaded.
 
@@ -303,8 +301,8 @@ ype1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/ur
 w/times/utmb8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/ut
 mr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><
 /usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (6 pages, 78823 bytes).
+Output written on Rd2.pdf (6 pages, 78936 bytes).
 Transcript written on Rd2.log.
 Saving output to 'Homework1-manual.pdf' ...
 Done
-You may want to clean up by 'rm -rf /var/folders/ds/gld1lv9n44x3mw3n6s4hv5dc0000gn/T//RtmpY5HY9P/Rd2pdff777a536fba'
+You may want to clean up by 'rm -rf /var/folders/ds/gld1lv9n44x3mw3n6s4hv5dc0000gn/T//RtmpYXp0V7/Rd2pdf1cb064c390cf'
