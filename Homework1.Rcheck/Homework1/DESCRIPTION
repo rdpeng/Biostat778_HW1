@@ -7,5 +7,5 @@ Author: Lu Li
 Maintainer: Lu Li<lli48@jhu.edu>
 Description: This package gives faster ways to fit a linear regression model and compute the multivariate normal density
 License: GPL
-Packaged: 2013-11-10 03:32:12 UTC; JnYi
-Built: R 3.0.1; ; 2013-11-10 03:32:13 UTC; unix
+Packaged: 2013-11-10 04:34:08 UTC; JnYi
+Built: R 3.0.1; ; 2013-11-10 04:34:08 UTC; unix

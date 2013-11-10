@@ -1,14 +1,13 @@
 #define function
-fastlm<-function(X, y, na.rm = FALSE) {
-        n<-length(y)
-        p<-ncol(X)
+fastlm<-function(X, y, na.rm=FALSE) {        
     #check argument na.rm
-        if (na.rm==TRUE){
+        if (na.rm!=FALSE) {
                 Z=cbind(X,y)
                 X=X[complete.cases(Z),]
-                y=as.matrix(y[complete.cases(Z)])
+                y=as.matrix(y)[complete.cases(Z)]
         }
-    
+        n<-length(y)
+        p<-ncol(X)
     #calculating transpose(X)%*%X
         A<-crossprod(X)
     #calculating transpose(X)%*%y    
@@ -26,5 +25,5 @@ fastlm<-function(X, y, na.rm = FALSE) {
     #the second and the third expression is almost the same in my computer
         cov_beta<-chol2inv(Q)*as.numeric(crossprod(y-X%*%betahat,y))/(n-p)
     
-        return(list(coeffients=betahat,vcov=cov_beta))
+        return(list(coefficients=betahat,vcov=cov_beta))
 }

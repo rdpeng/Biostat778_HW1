@@ -16,35 +16,35 @@ flush(stderr()); flush(stdout())
 
 ### ** Examples
 
-
-
-## The function is currently defined as
-dmvnorm <- function(x, mu, S, log = TRUE) {
+dmvnorm <- function(x, mu, S, log=TRUE) {
+  #k dimension multivariate normal
         k=length(mu) 
         if(is.matrix(x)==FALSE){
-          x=as.matrix(t(x))
-          
+        x=as.matrix(t(x))
         }
+  #n data points
         n=nrow(x)
-        
-        #check positive definite
+  
+  #check positive definite by trying to Cholesky decomposition
         Q=tryCatch({chol(S)},
-                   error=function(li){
-                           message("S cannot be a covariance matrix")
-                   })
-        
-        #compute Q_inverse*(x-mu)
+             error=function(li){
+               message("S cannot be a covariance matrix")
+             })
+  
+  #compute Q_inverse*(x-mu) 
+  #note that t(x-mu)%*%inv(Q%*%t(Q))%*%(x-mu)=crossprod(inv(Q)%*%(x-mu))
+  #the easiest way to compute that is to solve t(Q)%*%(inv(Q)%*%(x-mu))=x-mu
         temp1=x-rep(1,n)%*%t(mu)
         A=forwardsolve(t(Q),t(temp1))
         temp2=diag(crossprod(A))
-        
-        #compute density
+  
+  #compute density
         density=(-k/2)*log(2*pi)-(1/2)*2*sum(log(diag(Q)))-(1/2)*temp2
-        
-        #check if log argument
-        if(log==FALSE){
-                density=exp(density)
-        }
+  
+  #check if log argument
+        if(log!=TRUE){
+            density=exp(density)
+        }  
         return(density)
 }
 n <- 10
@@ -78,27 +78,35 @@ flush(stderr()); flush(stdout())
 
 ### ** Examples
 
-function (X, y, na.rm = FALSE) 
-{
-    n <- length(y)
-    p <- ncol(X)
+
+fastlm<-function(X, y, na.rm=FALSE) {        
+    #check argument na.rm
+        if (na.rm!=FALSE) {
+                Z=cbind(X,y)
+                X=X[complete.cases(Z),]
+                y=as.matrix(y)[complete.cases(Z)]
+        }
+        n<-length(y)
+        p<-ncol(X)
+    #calculating transpose(X)%*%X
+        A<-crossprod(X)
+    #calculating transpose(X)%*%y    
+        C<-crossprod(X,y)
     
-    ##Check if missing values in X and y should be removed
-    if (na.rm == TRUE) {
-        Z = cbind(X, y)
-        X = X[complete.cases(Z), ]
-        y = as.matrix(y[complete.cases(Z)])
-    }
-    A <- crossprod(X)
-    C <- crossprod(X, y)
+    #cholesky decomposition
+        Q<-chol(A)
+   
+    #solve betahat
+        temp1<-forwardsolve(t(Q),C) 
+        betahat<-backsolve(Q,temp1) 
     
-    ##Cholesky decomposition
-    Q <- chol(A)
-    temp1 <- forwardsolve(t(Q), C)
-    betahat <- backsolve(Q, temp1)
-    cov_beta <- chol2inv(Q) * as.numeric(crossprod(y)-crossprod(y,X%*%betahat)/(n - p))
-    return(list(coeffients = betahat, vcov = cov_beta))
-  }
+    #calculate covirance of beta
+    #note that t(e)%*%e=t(e)%*%y=t(y)%*%y-t(y)%*%X%*%betahat
+  
+        cov_beta<-chol2inv(Q)*as.numeric(crossprod(y-X%*%betahat,y))/(n-p)
+    
+        return(list(coefficients=betahat,vcov=cov_beta))
+}
     set.seed(2)
 ## Generate predictor matrix
     n <- 100

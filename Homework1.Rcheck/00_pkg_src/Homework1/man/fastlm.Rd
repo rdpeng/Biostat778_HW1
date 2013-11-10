@@ -47,7 +47,7 @@ the p*p covariance matrix of the estimated regression coefficients
 }
 \references{
 %% ~put references to the literature/web site here ~
-PH140.778 Advanced Statistical Computing
+PH140.778 Advanced Statistical Computing Dr.Peng
 }
 \author{
 %%  ~~who you are~~
@@ -56,27 +56,35 @@ Lu Li
 
 \examples{
 %## The function is currently defined as
-function (X, y, na.rm = FALSE) 
-{
-    n <- length(y)
-    p <- ncol(X)
+
+fastlm<-function(X, y, na.rm=FALSE) {        
+    #check argument na.rm
+        if (na.rm!=FALSE) {
+                Z=cbind(X,y)
+                X=X[complete.cases(Z),]
+                y=as.matrix(y)[complete.cases(Z)]
+        }
+        n<-length(y)
+        p<-ncol(X)
+    #calculating transpose(X)\%*\%X
+        A<-crossprod(X)
+    #calculating transpose(X)\%*\%y    
+        C<-crossprod(X,y)
     
-    ##Check if missing values in X and y should be removed
-    if (na.rm == TRUE) {
-        Z = cbind(X, y)
-        X = X[complete.cases(Z), ]
-        y = as.matrix(y[complete.cases(Z)])
-    }
-    A <- crossprod(X)
-    C <- crossprod(X, y)
+    #cholesky decomposition
+        Q<-chol(A)
+   
+    #solve betahat
+        temp1<-forwardsolve(t(Q),C) 
+        betahat<-backsolve(Q,temp1) 
     
-    ##Cholesky decomposition
-    Q <- chol(A)
-    temp1 <- forwardsolve(t(Q), C)
-    betahat <- backsolve(Q, temp1)
-    cov_beta <- chol2inv(Q) * as.numeric(crossprod(y)-crossprod(y,X\%*\%betahat)/(n - p))
-    return(list(coeffients = betahat, vcov = cov_beta))
-  }
+    #calculate covirance of beta
+    #note that t(e)\%*\%e=t(e)\%*\%y=t(y)\%*\%y-t(y)\%*\%X\%*\%betahat
+  
+        cov_beta<-chol2inv(Q)*as.numeric(crossprod(y-X\%*\%betahat,y))/(n-p)
+    
+        return(list(coefficients=betahat,vcov=cov_beta))
+}
     set.seed(2)
 ## Generate predictor matrix
     n <- 100
