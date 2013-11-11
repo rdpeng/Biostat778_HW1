@@ -1,0 +1,14 @@
+Package: Homework1
+Title: Advanced Statistical Computing - Homework 1
+Description: This package contains functions for Homework 1 for Advanced
+    Statistical Computing. It has functions for fast calculation of the beta
+    coefficients in linear regression and for the fast calculation of the
+    multivariate normal density.
+Version: 1.0
+Author: Leslie Myint <lmyint1@jhu.edu>
+Maintainer: Leslie Myint <lmyint1@jhu.edu>
+Date: 2013-11-13
+License: GPL-3
+Collate:
+    'dmvnorm.R'
+    'fastlm.R'

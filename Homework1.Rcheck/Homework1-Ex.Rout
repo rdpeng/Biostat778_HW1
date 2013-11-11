@@ -1,0 +1,98 @@
+
+R version 3.0.1 (2013-05-16) -- "Good Sport"
+Copyright (C) 2013 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin10.8.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> pkgname <- "Homework1"
+> source(file.path(R.home("share"), "R", "examples-header.R"))
+> options(warn = 1)
+> library('Homework1')
+> 
+> base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> cleanEx()
+> nameEx("dmvnorm")
+> ### * dmvnorm
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: dmvnorm
+> ### Title: Fast multivariate normal density
+> ### Aliases: dmvnorm
+> 
+> ### ** Examples
+> 
+> ## Create the covariance matrix
+> n <- 10
+> n2 <- n^2
+> xg <- seq(0, 1, length = n)
+> yg <- xg
+> g <- data.matrix(expand.grid(xg, yg))
+> D <- as.matrix(dist(g))
+> phi <- 5
+> 
+> S <- exp(-phi * D)
+> mu <- rep(0, n2)
+> set.seed(1)
+> x <- matrix(rnorm(n2), byrow = TRUE, ncol = n2)
+> 
+> dmvnorm(x, mu, S, log = TRUE)
+[1] -154.9475
+> 
+> 
+> 
+> cleanEx()
+> nameEx("fastlm")
+> ### * fastlm
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: fastlm
+> ### Title: Fast linear regression
+> ### Aliases: fastlm
+> 
+> ### ** Examples
+> 
+> set.seed(2)
+> ## Generate predictor matrix
+> n <- 1000
+> p <- 50
+> X <- cbind(1, matrix(rnorm(n * (p - 1)), n, p - 1))
+> 
+> ## Coefficents
+> b <- rnorm(p)
+> 
+> ## Response
+> y <- X 
+> 
+> fit <- fastlm(X, y)
+> 
+> 
+> 
+> ### * <FOOTER>
+> ###
+> options(digits = 7L)
+> base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
+Time elapsed:  0.084 0.004 0.087 0 0 
+> grDevices::dev.off()
+null device 
+          1 
+> ###
+> ### Local variables: ***
+> ### mode: outline-minor ***
+> ### outline-regexp: "\\(> \\)?### [*]+" ***
+> ### End: ***
+> quit('no')
