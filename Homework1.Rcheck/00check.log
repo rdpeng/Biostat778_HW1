@@ -9,7 +9,11 @@
 * checking if this is a source package ... OK
 * checking if there is a namespace ... OK
 * checking for executable files ... OK
-* checking for hidden files and directories ... OK
+* checking for hidden files and directories ... NOTE
+Found the following hidden files and directories:
+  .DS_Store
+These were most likely included in error. See section ‘Package
+structure’ in the ‘Writing R Extensions’ manual.
 * checking for portable file names ... OK
 * checking for sufficient/correct file permissions ... OK
 * checking whether package ‘Homework1’ can be installed ... OK
@@ -55,3 +59,7 @@
   Running ‘test-fastlm02.R’
   Comparing ‘test-fastlm02.Rout’ to ‘test-fastlm02.Rout.save’ ... OK
 * checking PDF version of manual ... OK
+NOTE: There was 1 note.
+See
+  ‘/Users/LeslieMyint/Google Drive/Grad School/Advanced Statistical Computing/Biostat778_HW1/Homework1.Rcheck/00check.log’
+for details.

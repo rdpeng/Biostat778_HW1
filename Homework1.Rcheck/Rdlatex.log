@@ -4,8 +4,8 @@ This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013)
  restricted \write18 enabled.
 entering extended mode
 
-(/private/var/folders/v8/j3c2pwjs7759_w4ts3z46th00000gn/T/RtmpNqKUDT/Rd2pdf9b45
-ae051af/Rd2.tex
+(/private/var/folders/v8/j3c2pwjs7759_w4ts3z46th00000gn/T/RtmpxO8fUl/Rd2pdfd1f5
+c0a54cc/Rd2.tex
 LaTeX2e <2011/06/27>
 Babel <3.9f> and hyphenation patterns for 78 languages loaded.
 
@@ -112,8 +112,8 @@ This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013)
  restricted \write18 enabled.
 entering extended mode
 
-(/private/var/folders/v8/j3c2pwjs7759_w4ts3z46th00000gn/T/RtmpNqKUDT/Rd2pdf9b45
-ae051af/Rd2.tex
+(/private/var/folders/v8/j3c2pwjs7759_w4ts3z46th00000gn/T/RtmpxO8fUl/Rd2pdfd1f5
+c0a54cc/Rd2.tex
 LaTeX2e <2011/06/27>
 Babel <3.9f> and hyphenation patterns for 78 languages loaded.
 
@@ -219,8 +219,8 @@ This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013)
  restricted \write18 enabled.
 entering extended mode
 
-(/private/var/folders/v8/j3c2pwjs7759_w4ts3z46th00000gn/T/RtmpNqKUDT/Rd2pdf9b45
-ae051af/Rd2.tex
+(/private/var/folders/v8/j3c2pwjs7759_w4ts3z46th00000gn/T/RtmpxO8fUl/Rd2pdfd1f5
+c0a54cc/Rd2.tex
 LaTeX2e <2011/06/27>
 Babel <3.9f> and hyphenation patterns for 78 languages loaded.
 
@@ -312,4 +312,4 @@ Output written on Rd2.pdf (4 pages, 78298 bytes).
 Transcript written on Rd2.log.
 Saving output to 'Homework1-manual.pdf' ...
 Done
-You may want to clean up by 'rm -rf /var/folders/v8/j3c2pwjs7759_w4ts3z46th00000gn/T//RtmpNqKUDT/Rd2pdf9b45ae051af'
+You may want to clean up by 'rm -rf /var/folders/v8/j3c2pwjs7759_w4ts3z46th00000gn/T//RtmpxO8fUl/Rd2pdfd1f5c0a54cc'

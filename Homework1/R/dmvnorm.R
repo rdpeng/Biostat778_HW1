@@ -6,17 +6,20 @@ dmvnorm = function(x, mu, S, log = TRUE) {
      k = ncol(x)
      
      # Check that S is positive definite
-     eigenvals = eigen(S,symmetric = TRUE, only.values = TRUE)$values
-     if (sum(eigenvals < 0) > 0) # Has negative eigenvalues
-          stop("S is not positive definite")
-     
-     # Make mu matrix
-     mum = t(matrix(rep(mu,n),k,n))
+#      eigenvals = eigen(S,symmetric = TRUE, only.values = TRUE)$values
+#      if (sum(eigenvals < 0) > 0) # Has negative eigenvalues
+#           stop("S is not positive definite")
      
      # Use Cholesky decomposition to invert S
-     cholS = chol(S)
-     cholSinv = solve(cholS)
-     Sinv = tcrossprod(cholSinv)
+     tryCatch( {
+          cholS = chol(S)
+     }, error = function(err) {
+          stop("S is not positive definite")
+     })
+#      cholSinv = solve(cholS)
+#      Sinv = tcrossprod(cholSinv)
+     z = forwardsolve(t(cholS),diag(nrow(S)))
+     Sinv = backsolve(cholS,z)
      
      # Calculate the 3 terms in the exponent of the density
      term1 = -k*log(2*pi)/2
