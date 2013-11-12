@@ -1,0 +1,81 @@
+\name{dmvnorm}
+\alias{dmvnorm}
+\title{
+calculate multivariate normal densities
+}
+\description{
+  dmvnorm is used to fast calculate the multivariate normal densities
+}
+\usage{
+dmvnorm(x, mu, S, log = TRUE)
+}
+%- maybe also 'usage' for other objects documented here.
+\arguments{
+  \item{x}{
+  	a n*k matrix of points to be evaluated. 
+}
+  \item{mu}{
+  	a length k vector of means for the k-dimensional Normal
+}
+  \item{S}{
+  	a k*k covariance matrix
+}
+  \item{log}{
+    A logical variable. If log =TRUE then it returns the log density at those points. If log = FALSE then it returns the density values.
+}
+}
+\details{
+%%  ~~ If necessary, more details than the description above ~~
+}
+\value{
+	Return a vector of length n containing the values of the multivariate Normal density evaluated at the n points.
+}
+\references{
+%% ~put references to the literature/web site here ~
+}
+\author{
+	Yuan He
+}
+\note{
+%%  ~~further notes~~
+}
+
+%% ~Make other sections like Warning with \section{Warning }{....} ~
+
+\seealso{
+%% ~~objects to See Also as \code{\link{help}}, ~~~
+}
+\examples{
+	set.seed(1)
+	x = matrix(rnorm(9), byrow = TRUE, ncol = 9)
+	mu = rep(0, 9)
+	xg <- seq(0, 1, length = 3)
+	yg <- xg
+	g <- data.matrix(expand.grid(xg, yg))
+	D <- as.matrix(dist(g))
+	phi <- 5
+	S <- exp(-phi * D)
+	dmvnorm(x, mu, S, log = TRUE)
+## The function is currently defined as
+function (x, mu, S, log = TRUE) 
+{
+    l = tryCatch(chol(S), error = function(e) {
+        message("S is not positive definite")
+    })
+    logdS = 2 * sum(log(diag(l)))
+    n = nrow(x)
+    Mx = x - rep(1, n) \%*\% t(mu)
+    Y = forwardsolve(t(l), t(Mx))
+    Mx3 = diag(crossprod(Y))
+    k = length(mu)
+    fx = -(k/2) * log(2 * pi) - (1/2) * logdS - (1/2) * Mx3
+    if (log == FALSE) 
+        fx = exp(fx)
+    else fx = fx
+    return(fx)
+  }
+}
+% Add one or more standard keywords, see file 'KEYWORDS' in the
+% R documentation directory.
+\keyword{multivariant}
+\keyword{normal distribution}% __ONLY ONE__ keyword per line
