@@ -1,0 +1,16 @@
+{
+    "contents" : "\\name{fastlm}\n\\alias{fastlm}\n\\title{\nfast linear regression estimation\n}\n\\description{\ncompute parameter MLE and its var-cov matrix for a linear regression model\n}\n\\usage{\nfastlm(X, y, na.rm = FALSE)\n}\n\\arguments{\n  \\item{X}{\nan n by p input matrix\n}\n  \\item{y}{\nan n by 1 input vector \n}\n  \\item{na.rm}{\nmissing values in X or y should be removed\n}\n}\n\\value{\nreture a list contains parameter MLE and its var-cov matrix for a linear regression model\n}",
+    "created" : 1384281684616.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "370895438",
+    "id" : "268A3559",
+    "lastKnownWriteTime" : 1384283405,
+    "path" : "~/Documents/778/Homework1/man/fastlm.Rd",
+    "project_path" : "man/fastlm.Rd",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_doc"
+}

@@ -1,0 +1,16 @@
+{
+    "contents" : "\\name{dmvnorm}\n\\alias{dmvnorm}\n\n\\title{\nFast Multivariate Normal Density Calculation\n}\n\\description{\nReturn a vector of length n containing the values of the multivariate Normal density evaluated at the n points\n}\n\\usage{\ndmvnorm(x, mu, S, log = TRUE)\n}\n\\arguments{\n  \\item{x}{\nan n by k matrix of points to be evaluated\n}\n  \\item{mu}{\na length k vector of means\n}\n  \\item{S}{\na k by k covariance matrix\n}\n  \\item{log}{\nIf true,  return the log density.\n}\n}",
+    "created" : 1384283135208.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1706143062",
+    "id" : "B9FAEF7F",
+    "lastKnownWriteTime" : 1384283644,
+    "path" : "~/Documents/778/Homework1/man/dmvnorm.Rd",
+    "project_path" : "man/dmvnorm.Rd",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_doc"
+}
