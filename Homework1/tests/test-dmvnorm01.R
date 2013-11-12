@@ -1,7 +1,7 @@
-source("dmvnorm.R")
+library(Homework1)
+op <- options(scipen = 5)
 
-## Create the covariance matrix
-n <- 100
+n <- 10
 n2 <- n^2
 xg <- seq(0, 1, length = n)
 yg <- xg
@@ -14,5 +14,7 @@ mu <- rep(0, n2)
 set.seed(1)
 x <- matrix(rnorm(n2), byrow = TRUE, ncol = n2)
 
-r <- replicate(5, system.time(dmvnorm(x, mu, S, log = TRUE)))
-print(rowMeans(r))
+y <- dmvnorm(x, mu, S, log = TRUE)
+print(y, digits = 10)
+
+options(op)

@@ -1,4 +1,4 @@
-source("fastlm.R")
+library(Homework1)
 
 set.seed(2)
 ## Generate predictor matrix
