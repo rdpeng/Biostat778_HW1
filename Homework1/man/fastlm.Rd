@@ -68,7 +68,7 @@ function (x, y, na.rm = FALSE)
     n = nrow(y)
     sigmaS = (crossprod(y, y) - crossprod(beta, B))/(n - k)
     covBeta = as.numeric(sigmaS) * chol2inv(l)
-    list(beta, covBeta)
+    list(coefficients = beta,vcov = covBeta)
   }
 }
 
