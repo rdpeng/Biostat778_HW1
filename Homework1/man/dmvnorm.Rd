@@ -25,25 +25,23 @@ dmvnorm(x, mu, S, log = TRUE)
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+This algrithm uses the Choleski Decmoposition of matrix, with the function forwardsolve(), it creates a faster way to calculate the multivariate normal densities.
 }
 \value{
 	Return a vector of length n containing the values of the multivariate Normal density evaluated at the n points.
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
+
 \author{
 	Yuan He
 }
 \note{
-%%  ~~further notes~~
+S should be a positive definite matrix.
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+forwardsolve(), chol()
 }
 \examples{
 	set.seed(1)

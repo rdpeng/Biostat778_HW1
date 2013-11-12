@@ -26,13 +26,7 @@ Maintainer: Yuan He <yhe23@jhu.edu>
 \references{
 ~~ Literature or other references for background information ~~
 }
-~~ Optionally other standard keywords, one per line, from file ~~
-~~ KEYWORDS in the R documentation directory ~~
 \keyword{fastRpackages}
-\seealso{
-~~ Optional links to other man pages, e.g. ~~
-~~ \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~
-}
 \examples{
 set.seed(2)
 n <- 100000

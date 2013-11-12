@@ -23,26 +23,19 @@ fastlm(x, y, na.rm = FALSE)
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+This function uses the Choleski Decomposition to faster calculate the linear regression coefficients and the covariance.
 }
 \value{
   \item{coefficients }{a vector of the regression coefficients estimated using maximum likelihood.}
   \item{vcov }{the p*p covariance of matrix of the estimated regression coefficients.}
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
+
 \author{
 Yuan He
 }
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+chol(), forwardsolve()
 }
 \examples{
 set.seed(2)
@@ -78,7 +71,6 @@ function (x, y, na.rm = FALSE)
     list(beta, covBeta)
   }
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
+
 \keyword{linear regression}
-\keyword{covariance}% __ONLY ONE__ keyword per line
+\keyword{covariance}
