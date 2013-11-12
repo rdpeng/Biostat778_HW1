@@ -1,0 +1,3 @@
+dmvnorm                 Evaluate the density of a multivariate normal
+                        distribution
+fastlm                  Fast linear regression

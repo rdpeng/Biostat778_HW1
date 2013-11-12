@@ -11,10 +11,9 @@
 #' fastlm(X, y)
 fastlm <- function(X, y, na.rm=FALSE) 
 {   
-    y <- as.vector(y)
     if (na.rm)
     {
-        to_keep <- complete.cases(X) & complete.cases(y)
+        to_keep <- complete.cases(X,y)
         X <- X[to_keep,]
         y <- y[to_keep]
     }
@@ -30,10 +29,8 @@ fastlm <- function(X, y, na.rm=FALSE)
     
     root_inv <- backsolve(root, diag(p))
     xx_inv <- tcrossprod(root_inv)
-    #second <- crossprod(xy, xx_inv %*% xy)
     s2 <- (sum(y*y) - sum(xy*beta_hat)) / (n - p)
-
     beta_hat_vcov <- xx_inv * s2
-
+    
     list(coefficients=beta_hat, vcov=beta_hat_vcov)
 }
