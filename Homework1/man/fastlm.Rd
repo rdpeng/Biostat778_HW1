@@ -10,6 +10,10 @@
   observations}
 
   \item{y}{a n-length vector of outcomes}
+
+  \item{na.rm}{Whether the X or y data has na's. If TRUE,
+  take the time to remove them. Otherwise skip it if you
+  don't expect an error.}
 }
 \value{
   A vector of densities, length-n

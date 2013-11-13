@@ -1,10 +1,10 @@
-
 #' Do fast linear models
 #'
 #' \code{fastlm} Does lm, but faster. Uses cholesky decomposition of crossprod(X) to invert X'X. 
 #'
 #' @param X a nxp matrix, where k is the number of measurements per observation, and n is the number of observations
 #' @param y a n-length vector of outcomes
+#' @param na.rm Whether the X or y data has na's. If TRUE, take the time to remove them. Otherwise skip it if you don't expect an error.
 #' @return A vector of densities, length-n
 #' @export
 #'
@@ -29,7 +29,13 @@
 #' str(fit_fast)
 
 fastlm <- function(X, y, na.rm = FALSE) {
+  if(na.rm){
+    naInd<-apply(cbind(y,X),1,function(x) any(is.na(x)))
+    X<-X[!naInd,]
+    y<-y[!naInd]
+  }
   p<-dim(X)[2]
+  n<-dim(X)[1]
   XtX<-crossprod(X) #faster than t(X)%*%X
   R<-chol(XtX) #works for any pos def symmetric matrix. In this case, it outputs the R from qr(X)=QR, as X'X=R'Q'QR=R'R
   Rinv<-backsolve(R,diag (rep(1,p))) #solving an upper triangular matrix
@@ -37,7 +43,7 @@ fastlm <- function(X, y, na.rm = FALSE) {
   Xty<-crossprod(X,y)
   beta<- XtXinv %*% Xty
   resid<- y- X%*%beta
-  sd_e<-sd(resid)
+  sd_e<-sum(resid^2)/(n-p)
 
   return(list(coefficients=beta, vcov=sd_e*XtXinv))
 }

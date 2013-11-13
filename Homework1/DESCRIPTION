@@ -10,4 +10,3 @@ License: # getOptions('devtools.desc.license')
 LazyData: true
 Collate:
     'HW1AF.r'
-    'HW1AF-package.r'
