@@ -1,14 +1,14 @@
-## Check `log = FALSE'
 
 library(Homework1)
+library(datasets)
+data(airquality)
 op <- options(scipen = 5)
 
-mu <- rep(0, 10)
-S <- diag(2, 10)
-x <- matrix(rbind(rep(0, 10), rep(1, 10)), 2, 10)
-y <- dmvnorm(x, mu, S, log = FALSE)
-print(y, digits = 10)
-y <- dmvnorm(x, mu, S, log = TRUE)
-print(y, digits = 10)
+X <- cbind(1, data.matrix(airquality[, -1]))
+y <- airquality$Ozone
+
+fit <- fastlm(X, y, na.rm = TRUE)
+print(drop(fit$coefficients))
+print(fit$vcov)
 
 options(op)
