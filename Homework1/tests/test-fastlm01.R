@@ -1,4 +1,5 @@
 library(Homework1)
+op <- options(scipen = 5, width = 80)
 
 set.seed(2)
 ## Generate predictor matrix
@@ -14,4 +15,6 @@ y <- X %*% b + rnorm(n)
 
 fit <- fastlm(X, y)
 print(drop(fit$coefficients))
-str(fit$vcov)
+diag(fit$vcov)
+
+options(op)
