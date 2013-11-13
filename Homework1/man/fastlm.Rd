@@ -17,7 +17,7 @@ fastlm(X, y, na.rm=FALSE)
 \examples{
 set.seed(2)
 ## Generate predictor matrix
-n <- 100000
+n <- 1000
 p <- 500
 X <- cbind(1, matrix(rnorm(n * (p - 1)), n, p - 1))
 

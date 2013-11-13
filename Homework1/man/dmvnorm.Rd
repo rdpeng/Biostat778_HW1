@@ -17,7 +17,7 @@ dmvnorm(x, mu, S, log = TRUE)
 \keyword{multivariate normal,density,fast}
 \examples{
 ## Create the covariance matrix
-n <- 100
+n <- 10
 n2 <- n^2
 xg <- seq(0, 1, length = n)
 yg <- xg
