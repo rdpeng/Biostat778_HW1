@@ -22,7 +22,8 @@ dmvnorm = function(x, mu, S, log = TRUE) {
      
      # Split exponent into exp(-.5QQ')
      # Q = (X-mu)'U^-1 where U = chol(S)
-     Q = forwardsolve(t(cholS),t(x)-mu)
+#      Q = forwardsolve(t(cholS),t(x)-mu)
+     Q = forwardsolve(cholS,t(x)-mu,transpose=TRUE,upper.tri=TRUE)
      exp_term = -.5*colSums(Q*Q)
 #      exp_term = -.5*crossprod(Q)
      
