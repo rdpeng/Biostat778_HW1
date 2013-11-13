@@ -1,0 +1,16 @@
+{
+    "contents" : "## Remove missing values\n\nlibrary(Homework1)\nlibrary(datasets)\ndata(airquality)\nop <- options(scipen = 5)\n\nX <- cbind(1, data.matrix(airquality[, -1]))\ny <- airquality$Ozone\n\nfit <- fastlm(X, y, na.rm = TRUE)\nprint(drop(fit$coefficients))\nprint(fit$vcov)\n\noptions(op)\n",
+    "created" : 1384294779084.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3776308871",
+    "id" : "B5D6059B",
+    "lastKnownWriteTime" : 1383963493,
+    "path" : "~/Documents/778/Biostat778_HW1/Homework1/tests/test-fastlm02.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
