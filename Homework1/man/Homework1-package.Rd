@@ -3,7 +3,7 @@
 \alias{Homework1}
 \docType{package}
 \title{
-What the package does (short line)
+Fast linear regression and multivariate normal density calculation
 ~~ package title ~~
 }
 \description{
