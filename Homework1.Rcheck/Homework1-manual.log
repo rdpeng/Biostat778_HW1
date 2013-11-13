@@ -1,13 +1,13 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  12 NOV 2013 14:15
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  12 NOV 2013 21:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/private/var/folders/v8/j3c2pwjs7759_w4ts3z46th00000gn/T/RtmpxO8fUl/Rd2pdfd1f
-5c0a54cc/Rd2.tex
+**/private/var/folders/v8/j3c2pwjs7759_w4ts3z46th00000gn/T/Rtmpj8vkjp/Rd2pdf152
+e7acebc32/Rd2.tex
 
-(/private/var/folders/v8/j3c2pwjs7759_w4ts3z46th00000gn/T/RtmpxO8fUl/Rd2pdfd1f5
-c0a54cc/Rd2.tex
+(/private/var/folders/v8/j3c2pwjs7759_w4ts3z46th00000gn/T/Rtmpj8vkjp/Rd2pdf152e
+7acebc32/Rd2.tex
 LaTeX2e <2011/06/27>
 Babel <3.9f> and hyphenation patterns for 78 languages loaded.
 
@@ -732,12 +732,12 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 166.
  ) 
 Here is how much of TeX's memory you used:
  6303 strings out of 493315
- 90459 string characters out of 6137904
+ 90462 string characters out of 6137904
  169780 words of memory out of 5000000
  9626 multiletter control sequences out of 15000+600000
  37881 words of font info for 47 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 38i,5n,27p,304b,429s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,5n,27p,305b,429s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Rfn.lm.fit} has been referenced but does not exis
 t, replaced by a fixed one
 
