@@ -34,12 +34,11 @@ dmvnorm <- function(x, mu, S, log=TRUE) {
   #compute Q_inverse*(x-mu) 
   #note that t(x-mu)%*%inv(Q%*%t(Q))%*%(x-mu)=crossprod(inv(Q)%*%(x-mu))
   #the easiest way to compute that is to solve t(Q)%*%(inv(Q)%*%(x-mu))=x-mu
-        temp1=x-rep(1,n)%*%t(mu)
-        A=forwardsolve(t(Q),t(temp1))
+        A=forwardsolve(t(Q),t(x)-mu)
         temp2=diag(crossprod(A))
   
   #compute density
-        density=(-k/2)*log(2*pi)-(1/2)*2*sum(log(diag(Q)))-(1/2)*temp2
+        density=(-k/2)*log(2*pi)-sum(log(diag(Q)))-(1/2)*temp2
   
   #check if log argument
         if(log!=TRUE){
@@ -103,7 +102,7 @@ fastlm<-function(X, y, na.rm=FALSE) {
     #calculate covirance of beta
     #note that t(e)%*%e=t(e)%*%y=t(y)%*%y-t(y)%*%X%*%betahat
   
-        cov_beta<-chol2inv(Q)*as.numeric(crossprod(y-X%*%betahat,y))/(n-p)
+        cov_beta<-chol2inv(Q)*as.numeric(crossprod(y)-crossprod(X%*%betahat))/(n-p)
     
         return(list(coefficients=betahat,vcov=cov_beta))
 }

@@ -15,7 +15,7 @@ This package gives faster algorithms to fit a linear regression model and comput
 Package: \tab Homework1\cr
 Type: \tab Package\cr
 Version: \tab 1.0\cr
-Date: \tab 2013-11-08\cr
+Date: \tab 2013-11-13\cr
 License: \tab GPL\cr
 }
 %~~ An overview of how to use the package, including the most important ~~

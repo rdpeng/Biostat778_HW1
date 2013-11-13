@@ -1,10 +1,10 @@
 Package: Homework1
 Type: Package
-Title: PH140.778 Advanced Statistical Computing HW1
+Title: PH140.778 Homework1
 Version: 1.0
-Date: 2013-11-09
+Date: 2013-11-13
 Author: Lu Li
-Maintainer: Lu Li<lli48@jhu.edu>
-Description: This package gives faster ways to fit a linear regression model and compute the multivariate normal density
+Maintainer: Lu Li <lli48@jhu.edu>
+Description: This package gives faster algorithms to fit a linear regression model and compute the multivariate normal density.
 License: GPL
-Packaged: 2013-11-10 04:34:08 UTC; JnYi
+Packaged: 2013-11-13 07:33:45 UTC; JnYi

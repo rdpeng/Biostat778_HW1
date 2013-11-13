@@ -81,7 +81,7 @@ fastlm<-function(X, y, na.rm=FALSE) {
     #calculate covirance of beta
     #note that t(e)\%*\%e=t(e)\%*\%y=t(y)\%*\%y-t(y)\%*\%X\%*\%betahat
   
-        cov_beta<-chol2inv(Q)*as.numeric(crossprod(y-X\%*\%betahat,y))/(n-p)
+        cov_beta<-chol2inv(Q)*as.numeric(crossprod(y)-crossprod(X\%*\%betahat))/(n-p)
     
         return(list(coefficients=betahat,vcov=cov_beta))
 }

@@ -1,11 +1,13 @@
 
-R version 3.0.1 (2013-05-16) -- "Good Sport"
+R version 3.0.2 Patched (2013-10-08 r64038) -- "Frisbee Sailing"
 Copyright (C) 2013 The R Foundation for Statistical Computing
-Platform: x86_64-apple-darwin10.8.0 (64-bit)
+Platform: x86_64-apple-darwin12.5.0 (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
 Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
 
 R is a collaborative project with many contributors.
 Type 'contributors()' for more information and
@@ -15,28 +17,25 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 'help.start()' for an HTML browser interface to help.
 Type 'q()' to quit R.
 
+> ## Check `log = FALSE'
+> 
 > library(Homework1)
 > op <- options(scipen = 5)
 > 
-> n <- 10
-> n2 <- n^2
-> xg <- seq(0, 1, length = n)
-> yg <- xg
-> g <- data.matrix(expand.grid(xg, yg))
-> D <- as.matrix(dist(g))
-> phi <- 5
-> 
-> S <- exp(-phi * D)
-> mu <- rep(0, n2)
-> set.seed(1)
-> x <- matrix(rnorm(n2), byrow = TRUE, ncol = n2)
-> 
+> mu <- rep(0, 100)
+> S <- diag(1, 100)
+> x <- rep(0, 100)
 > y <- dmvnorm(x, mu, S, log = TRUE)
 > print(y, digits = 10)
-[1] -154.9475445
+[1] -91.89385332
+> 
+> x <- rep(1, 100)
+> y <- dmvnorm(x, mu, S, log = TRUE)
+> print(y, digits = 10)
+[1] -141.8938533
 > 
 > options(op)
 > 
 > proc.time()
    user  system elapsed 
-  0.207   0.029   0.222 
+  0.259   0.022   0.272 
