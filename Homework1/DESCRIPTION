@@ -1,0 +1,12 @@
+Package: Homework1
+Type: Package
+Title: Fast linear regression and multivariate normal density calculation
+Version: 1.0
+Date: 2013-11-13
+Author: Shan Andrews
+Maintainer: Shan Andrews <sandrews@jhsph.edu>
+Description: This package contains two functions. The first function fits a
+linear regression model to outcome data y and predictor data in a matrix x. 
+The second function evaluates a k-dimensional multivariate Normal density 
+with mean mu and covariance S. 
+License: NA
