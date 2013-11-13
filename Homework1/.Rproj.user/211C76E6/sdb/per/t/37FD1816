@@ -1,0 +1,16 @@
+{
+    "contents" : "\nfastlm<- function(X, y, na.rm = FALSE)\n{\n     \n      if(is.matrix(X)==F) X<-as.matrix(X)\n      if(is.vector(y)==F) y<-as.vector(y)\n      \n      if(na.rm==T){\n            ok<-complete.cases(X,y)\n            X<-X[ok,]\n            y<-y[ok]\n      }\n      \n## compute QR-decomposition of X\nqx <- qr(X)\n## compute (X'X)^(-1) X'y\ncoef <- solve.qr(qx, y)\n## degrees of freedom and standard deviation of residuals\ndf <- nrow(X)-ncol(X)\nsigma2 <- sum((y - X%*%coef)^2)/df\n## compute sigma^2 * (X'X)^-1\nvcov <- sigma2 * chol2inv(qx$qr)\nlist(coefficients = coef,\nvcov = vcov)\n}\n",
+    "created" : 1384284103199.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1354572217",
+    "id" : "37FD1816",
+    "lastKnownWriteTime" : 1384294979,
+    "path" : "~/Documents/778/Homework1/R/fastlm.R",
+    "project_path" : "R/fastlm.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

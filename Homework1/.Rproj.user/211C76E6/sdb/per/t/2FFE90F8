@@ -1,0 +1,16 @@
+{
+    "contents" : "\ndmvnorm <- function(x, mu, S, log = TRUE) {\n      \n      \n      if (is.vector(mu)==F)  mu<-as.vector(mu)\n      if (is.matrix(x)==F)  x<-as.matrix(x)\n      \n      if (min(eigen(S)$values)>0){\n            k <- length(mu)\n        rooti <- backsolve(chol(S),diag(k))\n        quads <- colSums((crossprod(rooti,(x-mu)))^2)\n        y=exp(-(k/2)*log(2*pi) + sum(log(diag(rooti))) - .5*quads)\n\n        if(log==TRUE) return (log(y))\n        else return (y)\n      }\n\n        else\n                stop (\"S is not positive definite\")\n        \n        \n}\n\n\n##  Reference: http://gallery.rcpp.org/articles/dmvnorm_arma/",
+    "created" : 1384284189985.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "504272854",
+    "id" : "2FFE90F8",
+    "lastKnownWriteTime" : 1384287526,
+    "path" : "~/Documents/778/Homework1/R/dmvnorm.R",
+    "project_path" : "R/dmvnorm.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
