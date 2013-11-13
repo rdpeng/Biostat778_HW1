@@ -1,8 +1,7 @@
-
 dmvnorm <- function(x, mu, S, log = TRUE) {
       
       
-      if (is.vector(mu)==F)  mu<-as.vector(mu)
+      #if (is.vector(mu)==F)  mu<-as.vector(mu)
       if (is.matrix(x)==F)  x<-as.matrix(x)
       
       if (min(eigen(S)$values)>0){
