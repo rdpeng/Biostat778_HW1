@@ -6,7 +6,7 @@ Author: Aaron Fisher <afisher@jhsph.edu>
 Maintainer: Aaron Fisher <afisher@jhsph.edu>
 Depends:
     R (>= 3.0.1)
-License: # getOptions('devtools.desc.license')
+License: GPL-2
 LazyData: true
 Collate:
     'HW1AF.r'
