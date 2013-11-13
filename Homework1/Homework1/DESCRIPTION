@@ -1,0 +1,18 @@
+Package: Homework1
+Title: Advanced Computing Homework 1
+Description: Improves R's base linear regression function and adds support for
+    multivariate normal density evaluation.
+Version: 1.0-0
+Authors@R: person("James Pringle", role=c("aut","cre"),
+    email="james_pringle@jhu.edu")
+Depends:
+    R (>= 3.0.1)
+License: GPL-3
+LazyData: true
+Author: James Pringle
+Maintainer: James Pringle <james_pringle@jhu.edu>
+Date: 2013-11-12
+URL: https://github.com/jkpr/Biostat778_HW1
+Collate:
+    'dmvnorm.R'
+    'fastlm.R'

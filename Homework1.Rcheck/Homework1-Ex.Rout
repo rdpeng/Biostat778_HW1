@@ -1,0 +1,92 @@
+
+R version 3.0.1 (2013-05-16) -- "Good Sport"
+Copyright (C) 2013 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin10.8.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> pkgname <- "Homework1"
+> source(file.path(R.home("share"), "R", "examples-header.R"))
+> options(warn = 1)
+> library('Homework1')
+> 
+> base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> cleanEx()
+> nameEx("dmvnorm")
+> ### * dmvnorm
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: dmvnorm
+> ### Title: Evaluate the density of a multivariate normal distribution
+> ### Aliases: dmvnorm
+> 
+> ### ** Examples
+> 
+> x <- matrix(rnorm(10*9), ncol=9)
+> mu <- rep(0,9)
+> xg <- seq(0, 1, length = 3)
+> yg <- xg
+> g <- data.matrix(expand.grid(xg, yg))
+> D <- as.matrix(dist(g))
+> S <- exp(D * -1)
+> dmvnorm(x, mu, S)
+ [1] -15.865632  -7.594550  -8.250667 -19.989335 -12.798184 -12.230817
+ [7] -11.101489 -13.181662  -8.734690 -13.111322
+> 
+> 
+> 
+> cleanEx()
+> nameEx("fastlm")
+> ### * fastlm
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: fastlm
+> ### Title: Fast linear regression
+> ### Aliases: fastlm
+> 
+> ### ** Examples
+> 
+> X <- matrix(rnorm(10),ncol=2)
+> y <- rnorm(5)
+> fastlm(X, y)
+$coefficients
+           [,1]
+[1,] -0.6351093
+[2,] -1.3914452
+
+$vcov
+           [,1]       [,2]
+[1,]  0.2336437 -0.0999391
+[2,] -0.0999391  0.4693510
+
+> 
+> 
+> 
+> ### * <FOOTER>
+> ###
+> options(digits = 7L)
+> base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
+Time elapsed:  0.075 0.003 0.078 0 0 
+> grDevices::dev.off()
+null device 
+          1 
+> ###
+> ### Local variables: ***
+> ### mode: outline-minor ***
+> ### outline-regexp: "\\(> \\)?### [*]+" ***
+> ### End: ***
+> quit('no')
