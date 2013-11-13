@@ -1,0 +1,146 @@
+
+R version 3.0.2 (2013-09-25) -- "Frisbee Sailing"
+Copyright (C) 2013 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin10.8.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> pkgname <- "Homework1"
+> source(file.path(R.home("share"), "R", "examples-header.R"))
+> options(warn = 1)
+> library('Homework1')
+> 
+> base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> cleanEx()
+> nameEx("Homework1-package")
+> ### * Homework1-package
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Homework1-package
+> ### Title: HW1 fastlm and dmvnorm
+> ### Aliases: Homework1-package Homework1
+> 
+> ### ** Examples
+> 
+> # fastlm
+> set.seed(2)
+> ## Generate predictor matrix
+> n <- 100
+> p <- 15
+> X <- cbind(1, matrix(rnorm(n * (p - 1)), n, p - 1))
+> 
+> ## Coefficents
+> b <- rnorm(p)
+> 
+> ## Response
+> y <- X %*% b + rnorm(n)
+> 
+> fit <- fastlm(X, y)
+> str(fit)
+List of 2
+ $ coefficients: num [1:15, 1] 1.246 1.803 -0.293 -0.959 0.375 ...
+ $ vcov        : num [1:15, 1:15] 0.010007 -0.000397 0.000379 -0.001114 -0.00394 ...
+> 
+> # dmvnorm
+> n <- 5
+> n2 <- n^2
+> xg <- seq(0, 1, length = n)
+> yg <- xg
+> g <- data.matrix(expand.grid(xg, yg))
+> D <- as.matrix(dist(g))
+> phi <- 5
+> 
+> S <- exp(-phi * D)
+> mu <- rep(0, n2)
+> set.seed(1)
+> x <- matrix(rnorm(n2), byrow = TRUE, ncol = n2)
+> 
+> mymvpdf<-dmvnorm(x=x, mu=mu, S=S, log = TRUE)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("dmvnorm")
+> ### * dmvnorm
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: dmvnorm
+> ### Title: Fast Multivariate Normal Density
+> ### Aliases: dmvnorm
+> 
+> ### ** Examples
+> 
+> n <- 10
+> n2 <- n^2
+> xg <- seq(0, 1, length = n)
+> yg <- xg
+> g <- data.matrix(expand.grid(xg, yg))
+> D <- as.matrix(dist(g))
+> phi <- 5
+> 
+> S <- exp(-phi * D)
+> mu <- rep(0, n2)
+> set.seed(1)
+> x <- matrix(rnorm(n2), byrow = TRUE, ncol = n2)
+> 
+> mymvpdf<-dmvnorm(x=x, mu=mu, S=S, log = TRUE)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("fastlm")
+> ### * fastlm
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: fastlm
+> ### Title: Fast Linear Regression
+> ### Aliases: fastlm
+> 
+> ### ** Examples
+> 
+> set.seed(2)
+> ## Generate predictor matrix
+> n <- 100
+> p <- 15
+> X <- cbind(1, matrix(rnorm(n * (p - 1)), n, p - 1))
+> 
+> ## Coefficents
+> b <- rnorm(p)
+> 
+> ## Response
+> y <- X %*% b + rnorm(n)
+> 
+> fit <- fastlm(X, y)
+> 
+> 
+> 
+> ### * <FOOTER>
+> ###
+> options(digits = 7L)
+> base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
+Time elapsed:  0.1 0.006 0.118 0 0 
+> grDevices::dev.off()
+null device 
+          1 
+> ###
+> ### Local variables: ***
+> ### mode: outline-minor ***
+> ### outline-regexp: "\\(> \\)?### [*]+" ***
+> ### End: ***
+> quit('no')
