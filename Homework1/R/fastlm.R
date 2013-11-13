@@ -1,9 +1,8 @@
-
 fastlm<- function(X, y, na.rm = FALSE)
 {
      
       if(is.matrix(X)==F) X<-as.matrix(X)
-      if(is.vector(y)==F) y<-as.vector(y)
+      #if(is.vector(y)==F) y<-as.vector(y)
       
       if(na.rm==T){
             ok<-complete.cases(X,y)
