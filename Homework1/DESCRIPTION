@@ -1,0 +1,12 @@
+Package: Homework1
+Title: Homework1
+Description: fast lm and dmvnorm
+Version: 0.1
+Author: Aaron Fisher <afisher@jhsph.edu>
+Maintainer: Aaron Fisher <afisher@jhsph.edu>
+Depends:
+    R (>= 3.0.1)
+License: GPL-2
+LazyData: true
+Collate:
+    'HW1AF.r'
