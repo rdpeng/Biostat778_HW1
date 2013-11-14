@@ -1,0 +1,10 @@
+* installing *source* package ‘sqy’ ...
+** R
+** preparing package for lazy loading
+** help
+警告: /Users/JerryShi/Desktop/Biostat778_HW1-1/Homework1/man/sqy-package.Rd:30: All text must be in a section
+警告: /Users/JerryShi/Desktop/Biostat778_HW1-1/Homework1/man/sqy-package.Rd:31: All text must be in a section
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded
+* DONE (sqy)

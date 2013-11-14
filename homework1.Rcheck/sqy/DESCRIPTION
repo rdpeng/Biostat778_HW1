@@ -1,0 +1,11 @@
+Package: sqy
+Type: Package
+Title: The package conducts linear regression and evaluates density of
+        multivariate normal distribution.
+Version: 1.0
+Date: 2013-11-13
+Author: JerryPPA
+Maintainer: JerryPPA <09fudansqy@gmail.com>
+Description: For a given number observation of multivariate data,fastlm() will help the regression in a fast speed (faster than lm.fit()).Also,it will give the covariance of beta; for a given matrix of mu and covariance,dmvnorm() will give the density of such distribution.
+License: GPL
+Built: R 3.0.1; ; 2013-11-14 01:34:33 UTC; unix
