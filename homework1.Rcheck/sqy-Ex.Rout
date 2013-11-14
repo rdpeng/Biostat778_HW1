@@ -1,0 +1,222 @@
+
+R version 3.0.1 (2013-05-16) -- "Good Sport"
+Copyright (C) 2013 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin10.8.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> pkgname <- "sqy"
+> source(file.path(R.home("share"), "R", "examples-header.R"))
+> options(warn = 1)
+> library('sqy')
+> 
+> base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> cleanEx()
+> nameEx("dmvnorm")
+> ### * dmvnorm
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: dmvnorm
+> ### Title: Evaluate multivariate normal density
+> ### Aliases: dmvnorm
+> ### Keywords: ~kwd1 ~kwd2
+> 
+> ### ** Examples
+> n <- 100
+> n2 <- n^2
+> xg <- seq(0, 1, length = n)
+> yg <- xg
+> g <- data.matrix(expand.grid(xg, yg))
+> D <- as.matrix(dist(g))
+> phi <- 5
+> 
+> S <- exp(-phi * D)
+> mu <- rep(0, n2)
+> set.seed(1)
+> x <- matrix(rnorm(n2), byrow = TRUE, ncol = n2)
+> dmvnorm(x, mu, S, log = TRUE)
+[1] -124634.8
+> ##---- Should be DIRECTLY executable !! ----
+> ##-- ==>  Define data, use random,
+> ##--	or do  help(data=index)  for the standard data sets.
+> 
+> ## The function is currently defined as
+> function (x, mu, S, log = TRUE) 
++ {
++     R = tryCatch({
++         chol(S)
++     }, error = function(e) {
++         message("S is not positive definite")
++     })
++     logs = 2 * sum(log(diag(R)))
++     y = x - rep(1, nrow(x)) %*% t(mu)
++     z = forwardsolve(t(R), t(y))
++     cov = diag(crossprod(z))
++     final = (-length(mu)/2) * log(2 * pi) - (1/2) * logs - (1/2) * 
++         cov
++     if (log == TRUE) {
++         final = final
++     }
++     else {
++         final = exp(final)
++     }
++     return(final)
++   }
+function (x, mu, S, log = TRUE) 
+{
+    R = tryCatch({
+        chol(S)
+    }, error = function(e) {
+        message("S is not positive definite")
+    })
+    logs = 2 * sum(log(diag(R)))
+    y = x - rep(1, nrow(x)) %*% t(mu)
+    z = forwardsolve(t(R), t(y))
+    cov = diag(crossprod(z))
+    final = (-length(mu)/2) * log(2 * pi) - (1/2) * logs - (1/2) * 
+        cov
+    if (log == TRUE) {
+        final = final
+    }
+    else {
+        final = exp(final)
+    }
+    return(final)
+}
+> 
+> 
+> 
+> cleanEx()
+> nameEx("fastlm")
+> ### * fastlm
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: fastlm
+> ### Title: Conduct a fast linear model regression
+> ### Aliases: fastlm
+> ### Keywords: ~kwd1 ~kwd2
+> 
+> ### ** Examples
+> set.seed(2)
+> n <- 100000
+> p <- 500
+> X <- cbind(1, matrix(rnorm(n * (p - 1)), n, p - 1))
+> b <- rnorm(p)
+> y <- X 
+> fit <- fastlm(X, y)
+> str(fit)
+List of 2
+ $ : num [1:500, 1:500] 1.00 5.96e-19 2.65e-19 -1.14e-18 6.09e-19 ...
+ $ : num [1:500, 1:500] 2.94e-21 0.00 0.00 0.00 0.00 ...
+> 
+> ##---- Should be DIRECTLY executable !! ----
+> ##-- ==>  Define data, use random,
+> ##--	or do  help(data=index)  for the standard data sets.
+> 
+> ## The function is currently defined as
+> function (X, y, na.rm = FALSE) 
++ {
++     if (na.rm == TRUE) {
++         cb = cbind(x, y)
++         X = X[complete.cases(cb), ]
++         y = as.matrix(y[complete.cases(cb)])
++     }
++     n = nrow(X)
++     p = ncol(X)
++     l = chol(crossprod(X, X))
++     cp = crossprod(X, y)
++     cof = forwardsolve(t(l), forwardsolve(t(l), cp), transp = TRUE)
++     vcov <- as.numeric((crossprod(y, y) - crossprod(cof, cp))) * 
++         chol2inv(l)/(n - p)
++     list(cof, vcov)
++   }
+function (X, y, na.rm = FALSE) 
+{
+    if (na.rm == TRUE) {
+        cb = cbind(x, y)
+        X = X[complete.cases(cb), ]
+        y = as.matrix(y[complete.cases(cb)])
+    }
+    n = nrow(X)
+    p = ncol(X)
+    l = chol(crossprod(X, X))
+    cp = crossprod(X, y)
+    cof = forwardsolve(t(l), forwardsolve(t(l), cp), transp = TRUE)
+    vcov <- as.numeric((crossprod(y, y) - crossprod(cof, cp))) * 
+        chol2inv(l)/(n - p)
+    list(cof, vcov)
+}
+> 
+> 
+> 
+> cleanEx()
+> nameEx("sqy-package")
+> ### * sqy-package
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: sqy-package
+> ### Title: What the package does (short line) ~~ package title ~~
+> ### Aliases: sqy-package sqy
+> ### Keywords: package
+> 
+> ### ** Examples
+> 
+> n <- 100
+> n2 <- n^2
+> xg <- seq(0, 1, length = n)
+> yg <- xg
+> g <- data.matrix(expand.grid(xg, yg))
+> D <- as.matrix(dist(g))
+> phi <- 5
+> 
+> S <- exp(-phi * D)
+> mu <- rep(0, n2)
+> set.seed(1)
+> x <- matrix(rnorm(n2), byrow = TRUE, ncol = n2)
+> dmvnorm(x, mu, S, log = TRUE)
+[1] -124634.8
+> set.seed(2)
+> n <- 100000
+> p <- 500
+> X <- cbind(1, matrix(rnorm(n * (p - 1)), n, p - 1))
+> b <- rnorm(p)
+> y <- X 
+> fit <- fastlm(X, y)
+> str(fit)
+List of 2
+ $ : num [1:500, 1:500] 1.00 5.96e-19 2.65e-19 -1.14e-18 6.09e-19 ...
+ $ : num [1:500, 1:500] 2.94e-21 0.00 0.00 0.00 0.00 ...
+> 
+> 
+> 
+> 
+> 
+> ### * <FOOTER>
+> ###
+> options(digits = 7L)
+> base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
+Time elapsed:  159.042 22.015 149.472 0 0 
+> grDevices::dev.off()
+null device 
+          1 
+> ###
+> ### Local variables: ***
+> ### mode: outline-minor ***
+> ### outline-regexp: "\\(> \\)?### [*]+" ***
+> ### End: ***
+> quit('no')

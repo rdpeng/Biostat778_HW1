@@ -1,0 +1,87 @@
+* using log directory ‘/Users/JerryShi/Desktop/Biostat778_HW1-1/homework1.Rcheck’
+* using R version 3.0.1 (2013-05-16)
+* using platform: x86_64-apple-darwin10.8.0 (64-bit)
+* using session charset: UTF-8
+* checking for file ‘homework1/DESCRIPTION’ ... OK
+* checking extension type ... Package
+* this is package ‘sqy’ version ‘1.0’
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for executable files ... OK
+* checking for hidden files and directories ... NOTE
+Found the following hidden files and directories:
+  .DS_Store
+  R/.DS_Store
+  R/.Rhistory
+  man/.DS_Store
+  man/.Rapp.history
+  tests/.DS_Store
+  tests/.Rhistory
+These were most likely included in error. See section ‘Package
+structure’ in the ‘Writing R Extensions’ manual.
+* checking for portable file names ... OK
+* checking for sufficient/correct file permissions ... OK
+* checking whether package ‘sqy’ can be installed ... OK
+* checking installed package size ... OK
+* checking package directory ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking for left-over files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking loading without being on the library search path ... OK
+* checking for unstated dependencies in R code ... OK
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... NOTE
+fastlm: no visible binding for global variable ‘x’
+fastlm: warning in forwardsolve(t(l), forwardsolve(t(l), cp), transp =
+  TRUE): 'transp'部分匹配为'transpose'
+* checking Rd files ... WARNING
+prepare_Rd: dmvnorm.Rd:44-46: Dropping empty section \note
+prepare_Rd: dmvnorm.Rd:41-43: Dropping empty section \author
+prepare_Rd: dmvnorm.Rd:38-40: Dropping empty section \references
+prepare_Rd: dmvnorm.Rd:50-52: Dropping empty section \seealso
+prepare_Rd: fastlm.Rd:25-27: Dropping empty section \details
+prepare_Rd: fastlm.Rd:41-43: Dropping empty section \note
+prepare_Rd: fastlm.Rd:35-37: Dropping empty section \references
+prepare_Rd: fastlm.Rd:47-49: Dropping empty section \seealso
+prepare_Rd: sqy-package.Rd:30: All text must be in a section
+prepare_Rd: sqy-package.Rd:31: All text must be in a section
+* checking Rd metadata ... OK
+* checking Rd cross-references ... WARNING
+Unknown package ‘<pkg>’ in Rd xrefs
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... OK
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking examples ... OK
+* checking for unstated dependencies in tests ... WARNING
+‘library’ or ‘require’ call not declared from: ‘Homework1’
+* checking tests ... ERROR
+Running the tests in ‘tests/test-dmvnorm01.R’ failed.
+Last 13 lines of output:
+  Type 'license()' or 'licence()' for distribution details.
+  
+  R is a collaborative project with many contributors.
+  Type 'contributors()' for more information and
+  'citation()' on how to cite R or R packages in publications.
+  
+  Type 'demo()' for some demos, 'help()' for on-line help, or
+  'help.start()' for an HTML browser interface to help.
+  Type 'q()' to quit R.
+  
+  > library(Homework1)
+  Error in library(Homework1) : there is no package called 'Homework1'
+  Execution halted
