@@ -8,14 +8,14 @@
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-	dmvnorm(x, mu, S, log = TRUE)
+dmvnorm(x, mu, S, log = TRUE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{a matrix containing the observations of mutiple varible.
+  \item{x}{a matrix containing the observations of multiple variable
 %%     ~~Describe \code{x} here~~
 }
-  \item{mu}{a vector of the mean of each variable.
+  \item{mu}{a vector of the mean of each variable
 %%     ~~Describe \code{mu} here~~
 }
   \item{S}{a matrix of covariance
@@ -25,7 +25,7 @@
 %%     ~~Describe \code{log} here~~
 }
 }
-\details{x is a n×k matrix of points to be evaluated, μ is a length k vector of means for the k-dimensional Normal, and S is a k×k covariance matrix.
+\details{x is a nxk matrix of points to be evaluated,mu is a length k vector of means for the k-dimensional Normal, and S is a kxk covariance matrix.
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{The returned value is the density of these variables
@@ -38,7 +38,7 @@
 \references{
 %% ~put references to the literature/web site here ~
 }
-\author{Jerryppa
+\author{
 %%  ~~who you are~~
 }
 \note{
@@ -62,11 +62,7 @@ S <- exp(-phi * D)
 mu <- rep(0, n2)
 set.seed(1)
 x <- matrix(rnorm(n2), byrow = TRUE, ncol = n2)
-
-source("dmvnorm.R")
 dmvnorm(x, mu, S, log = TRUE)
-
-
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,
 ##--	or do  help(data=index)  for the standard data sets.

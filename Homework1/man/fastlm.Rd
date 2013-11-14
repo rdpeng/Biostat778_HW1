@@ -4,7 +4,7 @@
 \title{Conduct a fast linear model regression
 %%  ~~function to do ... ~~
 }
-\description{The function can conduct a fast linear model regression.
+\description{The function can conduct a fast linear model
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
@@ -12,7 +12,7 @@ fastlm(X, y, na.rm = FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{X}{a n×p matrix of variables
+  \item{X}{a nxp matrix of variables
 %%     ~~Describe \code{X} here~~
 }
   \item{y}{a vector of observations
@@ -26,7 +26,6 @@ fastlm(X, y, na.rm = FALSE)
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{The function returns a list of 2:coefficients and vcov
-	
 %%  ~Describe the value returned
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
@@ -54,7 +53,6 @@ p <- 500
 X <- cbind(1, matrix(rnorm(n * (p - 1)), n, p - 1))
 b <- rnorm(p)
 y <- X %*% b + rnorm(n)
-source("fastlm.R")
 fit <- fastlm(X, y)
 str(fit)
 
