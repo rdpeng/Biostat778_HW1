@@ -1,0 +1,9 @@
+Package: Homework1
+Type: Package
+Title: Homework1 for advanced statistical computing
+Version: 1.0
+Date: 2013-11-13
+Author: Stephen Cristiano
+Maintainer: <scristia@jhsph.edu>
+Description: fast linear regression, fast mulvariate normal density
+License: GPL
