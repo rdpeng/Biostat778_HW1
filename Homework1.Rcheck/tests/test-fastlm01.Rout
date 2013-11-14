@@ -1,0 +1,60 @@
+
+R version 3.0.1 (2013-05-16) -- "Good Sport"
+Copyright (C) 2013 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin10.8.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> library(Homework1)
+> op <- options(scipen = 5, width = 80)
+> 
+> set.seed(2)
+> ## Generate predictor matrix
+> n <- 1000
+> p <- 50
+> X <- cbind(1, matrix(rnorm(n * (p - 1)), n, p - 1))
+> 
+> ## Coefficents
+> b <- rnorm(p)
+> 
+> ## Response
+> y <- X %*% b + rnorm(n)
+> 
+> fit <- fastlm(X, y)
+> print(drop(fit$coefficients))
+ [1] -1.35505545  1.68534061  0.82791539 -1.37484760  0.67450212 -1.39961140
+ [7] -0.84374349  0.22179390  2.12469078 -0.63091154 -0.80697599  1.55788206
+[13] -0.68727364  0.92469861 -0.76145647  0.01195682  1.03832292  1.21646514
+[19]  0.47180079 -0.98216205  0.40120831 -0.47206484  0.10466625 -0.77857751
+[25] -0.79340938 -0.12416514 -1.61631849  0.01873405  0.81810408  0.48350376
+[31] -0.52924500  1.58187434  0.17585559  0.19666803 -0.39056236  2.30857605
+[37] -0.03177459  1.27405625  0.81096917 -0.80467646  1.24442948  0.28248735
+[43]  1.51887684  2.49052327 -0.95376876  2.16754658  1.38735744 -0.30704992
+[49] -0.95042610 -0.45199298
+> diag(fit$vcov)
+ [1] 0.0010515549 0.0010237397 0.0010325325 0.0009844448 0.0010506195
+ [6] 0.0010977036 0.0010949135 0.0009177660 0.0010774295 0.0009628912
+[11] 0.0010886815 0.0009604560 0.0010250788 0.0009799210 0.0010102888
+[16] 0.0009965950 0.0010287485 0.0009928805 0.0009923456 0.0009982417
+[21] 0.0010010122 0.0010299374 0.0009532908 0.0010004233 0.0010217227
+[26] 0.0010949734 0.0010184259 0.0010802681 0.0010354445 0.0010075144
+[31] 0.0010359657 0.0010091582 0.0010116395 0.0009383329 0.0010175556
+[36] 0.0010092679 0.0010547385 0.0010050351 0.0010172096 0.0010781549
+[41] 0.0010689351 0.0010097098 0.0010254400 0.0010582267 0.0010151400
+[46] 0.0009977570 0.0010017721 0.0010553250 0.0011139777 0.0010312526
+> 
+> options(op)
+> 
+> proc.time()
+   user  system elapsed 
+  0.208   0.028   0.223 
