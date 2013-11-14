@@ -1,1 +1,4 @@
-exportPattern("^[[:alpha:]]+")
+#exportPattern("^[[:alpha:]]+")
+
+export("fastlm","dmvnorm")
+import("roxygen2")

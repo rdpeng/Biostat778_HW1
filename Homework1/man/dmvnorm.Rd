@@ -2,10 +2,13 @@
 \alias{dmvnorm}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Fast Multivariate Normal Density
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+This function evaluates the k-dimensional multivariate normal desnity
+with mean mu and covariance S. S must be positive definite and symmetric.
+The function returns a vector of length n containing the values of the 
+multivariate normal density evaluated at n points. 
 }
 \usage{
 dmvnorm(x, mu, S, log = TRUE)
@@ -13,33 +16,31 @@ dmvnorm(x, mu, S, log = TRUE)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
-%%     ~~Describe \code{x} here~~
+a nxk matrix of points to be evaluated
 }
   \item{mu}{
-%%     ~~Describe \code{mu} here~~
+a length k vector of means for the k-dimensional Normal
 }
   \item{S}{
-%%     ~~Describe \code{S} here~~
+a kxk covariance matrix 
 }
   \item{log}{
-%%     ~~Describe \code{log} here~~
+logical. If log=TRUE then the function returns the log density.
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+The covariance matrix S must be symmetric. The function checks if it is
+positive definite. 
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+A vector of length n containing the values of the multivariate normal 
+density evaluated at n points.
 }
 \references{
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Shan Andrews
 }
 \note{
 %%  ~~further notes~~
@@ -51,9 +52,25 @@ dmvnorm(x, mu, S, log = TRUE)
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+op <- options(scipen = 5)
+
+n <- 10
+n2 <- n^2
+xg <- seq(0, 1, length = n)
+yg <- xg
+g <- data.matrix(expand.grid(xg, yg))
+D <- as.matrix(dist(g))
+phi <- 5
+
+S <- exp(-phi * D)
+mu <- rep(0, n2)
+set.seed(1)
+x <- matrix(rnorm(n2), byrow = TRUE, ncol = n2)
+
+y <- dmvnorm(x, mu, S, log = TRUE)
+print(y, digits = 10)
+
+options(op)
 
 ## The function is currently defined as
 function (x, mu, S, log = TRUE) 
@@ -64,7 +81,7 @@ function (x, mu, S, log = TRUE)
     }
     k <- length(x)
     expterm <- ((-1/2) * sqrt(mahalanobis(x, mu, S)))
-    dens <- exp(((-k/2) * log(2 * pi)) - ((1/2) * log(det(S))) - 
+    dens <- exp(((-k/2) * log(2 * pi)) - ((1/2) * log(det(S))) + 
         expterm)
     if (log == TRUE) {
         return(log(dens))

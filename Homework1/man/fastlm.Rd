@@ -2,10 +2,11 @@
 \alias{fastlm}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Fast Linear regression
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+This function fits a linear regression model to outcome data y and
+predictor data in a matrix X. 
 }
 \usage{
 fastlm(X, y, na.rm = FALSE)
@@ -13,13 +14,13 @@ fastlm(X, y, na.rm = FALSE)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{X}{
-%%     ~~Describe \code{X} here~~
+An nXp matrix of predictor data
 }
   \item{y}{
-%%     ~~Describe \code{y} here~~
+A vector of length n of outcome data
 }
   \item{na.rm}{
-%%     ~~Describe \code{na.rm} here~~
+Logical indicating whethere missing values in X or y should be removed
 }
 }
 \details{
@@ -28,15 +29,15 @@ fastlm(X, y, na.rm = FALSE)
 \value{
 %%  ~Describe the value returned
 %%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
+	\item{coefficients }{A vector of regression coefficients estimated using maximum likelihood}
+	\item{vcov }{A pxp covariance matrix of the estimated regression coefficients}
 %% ...
 }
 \references{
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Shan Andrews
 }
 \note{
 %%  ~~further notes~~
@@ -48,9 +49,25 @@ fastlm(X, y, na.rm = FALSE)
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+op <- options(scipen = 5, width = 80)
+
+set.seed(2)
+## Generate predictor matrix
+n <- 1000
+p <- 50
+X <- cbind(1, matrix(rnorm(n * (p - 1)), n, p - 1))
+
+## Coefficents
+b <- rnorm(p)
+
+## Response
+y <- X %*% b + rnorm(n)
+
+fit <- fastlm(X, y)
+print(drop(fit$coefficients))
+diag(fit$vcov)
+
+options(op)
 
 ## The function is currently defined as
 function (X, y, na.rm = FALSE) 
