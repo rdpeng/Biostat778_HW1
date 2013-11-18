@@ -17,23 +17,34 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 'help.start()' for an HTML browser interface to help.
 Type 'q()' to quit R.
 
-> ## Check `log = FALSE'
-> 
 > library(Homework1)
 > op <- options(scipen = 5)
 > 
-> mu <- rep(0, 10)
-> S <- diag(2, 10)
-> x <- matrix(rbind(rep(0, 10), rep(1, 10)), 2, 10)
-> y <- dmvnorm(x, mu, S, log = FALSE)
-> print(y, digits = 10)
-[1] 0.000003191175433 0.000000261947631
-> y <- dmvnorm(x, mu, S, log = TRUE)
-> print(y, digits = 10)
-[1] -12.65512123 -15.15512123
+> set.seed(2)
+> ## Generate predictor matrix
+> n <- 2 * 1e6
+> p <- 5
+> X <- cbind(1, matrix(rnorm(n * (p - 1)), n, p - 1))
+> 
+> ## Coefficents
+> b <- rnorm(p)
+> 
+> ## Response
+> y <- drop(X %*% b + rnorm(n))
+> 
+> fit <- fastlm(X, y)
+> print(drop(fit$coefficients))
+[1] -0.4605205 -1.3810583 -0.1638676  0.4865238 -0.4005048
+> fit$vcov
+              [,1]          [,2]          [,3]          [,4]          [,5]
+[1,]  5.015933e-07  1.470612e-10 -6.330786e-11  4.349195e-10 -1.727829e-11
+[2,]  1.470612e-10  5.016164e-07  1.820318e-11 -3.956843e-11 -6.598639e-10
+[3,] -6.330786e-11  1.820318e-11  5.023737e-07 -2.393821e-10  7.801089e-10
+[4,]  4.349195e-10 -3.956843e-11 -2.393821e-10  5.013150e-07 -3.507644e-10
+[5,] -1.727829e-11 -6.598639e-10  7.801089e-10 -3.507644e-10  5.021884e-07
 > 
 > options(op)
 > 
 > proc.time()
    user  system elapsed 
-  0.265   0.021   0.277 
+  1.265   0.128   1.369 

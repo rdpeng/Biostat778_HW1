@@ -17,23 +17,36 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 'help.start()' for an HTML browser interface to help.
 Type 'q()' to quit R.
 
-> ## Check `log = FALSE'
-> 
 > library(Homework1)
 > op <- options(scipen = 5)
 > 
-> mu <- rep(0, 10)
-> S <- diag(2, 10)
-> x <- matrix(rbind(rep(0, 10), rep(1, 10)), 2, 10)
-> y <- dmvnorm(x, mu, S, log = FALSE)
-> print(y, digits = 10)
-[1] 0.000003191175433 0.000000261947631
-> y <- dmvnorm(x, mu, S, log = TRUE)
-> print(y, digits = 10)
-[1] -12.65512123 -15.15512123
+> set.seed(2)
+> ## Generate predictor matrix
+> n <- 1000 * 2
+> p <- 990 * 2
+> X <- cbind(1, matrix(rnorm(n * (p - 1)), n, p - 1))
+> 
+> ## Coefficents
+> b <- rnorm(p)
+> 
+> ## Response
+> y <- drop(X %*% b + rnorm(n))
+> 
+> fit <- fastlm(X, y)
+> b.est <- drop(fit$coefficients)
+> yhat <- drop(X %*% b.est)
+> summary(yhat)
+    Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
+-156.500  -31.130   -2.281   -1.551   27.930  152.900 
+> res <- y - yhat
+> summary(res)
+     Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
+-0.452800 -0.081390  0.001618  0.000000  0.084000  0.400100 
+> 
+> 
 > 
 > options(op)
 > 
 > proc.time()
    user  system elapsed 
-  0.265   0.021   0.277 
+  2.088   0.094   1.528 

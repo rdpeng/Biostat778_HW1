@@ -30,7 +30,7 @@ Type 'q()' to quit R.
 > b <- rnorm(p)
 > 
 > ## Response
-> y <- X %*% b + rnorm(n)
+> y <- drop(X %*% b + rnorm(n))
 > 
 > fit <- fastlm(X, y)
 > print(drop(fit$coefficients))
